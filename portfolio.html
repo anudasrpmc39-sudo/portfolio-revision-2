@@ -1,0 +1,2344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Your Name | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --deep: #0f2044;
+    --blue: #1a3a6e;
+    --mid-blue: #2457a4;
+    --accent: #3b82f6;
+    --sky: #bfdbfe;
+    --pale: #dbeafe;
+    --light-bg: #e8f4fd;
+    --teal: #0d9488;
+    --gold: #d4a853;
+    --white: #ffffff;
+    --off-white: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-400: #94a3b8;
+    --gray-600: #475569;
+    --gray-800: #1e293b;
+    --text: #1e293b;
+    --text-light: #64748b;
+    --shadow: 0 4px 24px rgba(10,22,40,0.12);
+    --shadow-lg: 0 12px 48px rgba(10,22,40,0.18);
+    --radius: 16px;
+    --radius-sm: 8px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--off-white);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── PAGES ── */
+  .page { display: none; min-height: 100vh; }
+  .page.active { display: block; }
+
+  /* ── HEADER ── */
+  header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--deep) 50%, var(--blue) 100%);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+
+  .header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 70px;
+  }
+
+  .logo {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .logo-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.02em;
+    line-height: 1;
+  }
+
+  .logo-title {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 400;
+    color: var(--sky);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  nav { display: flex; gap: 0.25rem; }
+
+  nav a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.5rem 0.9rem;
+    border-radius: 6px;
+    transition: all 0.25s;
+    position: relative;
+  }
+
+  nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.25s;
+    border-radius: 2px;
+  }
+
+  nav a:hover, nav a.active {
+    color: var(--white);
+    background: rgba(255,255,255,0.08);
+  }
+
+  nav a:hover::after, nav a.active::after { width: 60%; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    padding: 2.5rem 2rem;
+    margin-top: 0;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+
+  .footer-left .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--white);
+  }
+
+  .footer-left p {
+    color: var(--gray-400);
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .social-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.25s;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .social-icon:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    box-shadow: 0 6px 20px rgba(59,130,246,0.3);
+  }
+
+  .social-icon svg { width: 18px; height: 18px; }
+
+  .social-icon.linkedin { background: rgba(0,119,181,0.2); }
+  .social-icon.linkedin:hover { background: rgba(0,119,181,0.5); }
+  .social-icon.researchgate { background: rgba(0,201,167,0.2); }
+  .social-icon.researchgate:hover { background: rgba(0,201,167,0.4); }
+  .social-icon.scholar { background: rgba(66,133,244,0.2); }
+  .social-icon.scholar:hover { background: rgba(66,133,244,0.4); }
+
+  .footer-right {
+    color: var(--gray-400);
+    font-size: 0.75rem;
+    text-align: right;
+  }
+
+  /* ── SECTION TITLE ── */
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mid-blue);
+    margin-bottom: 0.75rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--gold);
+    border-radius: 2px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-sub {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    max-width: 560px;
+    line-height: 1.7;
+  }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--gray-200);
+    transition: all 0.3s;
+  }
+
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--accent);
+  }
+
+  /* ── CONTAINER ── */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .section {
+    padding: 5rem 0;
+  }
+
+  .section:nth-child(even) {
+    background: var(--gray-100);
+  }
+
+  /* ──────────────────── HOME PAGE ──────────────────── */
+
+  /* BANNER */
+  .home-banner {
+    background: linear-gradient(135deg, #e0f2fe 0%, #bfdbfe 40%, #dbeafe 100%);
+    padding: 5rem 0 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .home-banner::before {
+    content: '';
+    position: absolute;
+    top: -80px;
+    right: -80px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(59,130,246,0.12) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .home-banner::after {
+    content: '';
+    position: absolute;
+    bottom: -60px;
+    left: -60px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(13,148,136,0.1) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .banner-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .banner-kicker {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--mid-blue);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .banner-kicker::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: var(--gold);
+  }
+
+  .banner-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.05;
+    margin-bottom: 0.5rem;
+  }
+
+  .banner-name span {
+    color: var(--mid-blue);
+    font-style: italic;
+  }
+
+  .banner-role {
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: var(--blue);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
+  }
+
+  .banner-desc {
+    color: var(--gray-600);
+    font-size: 0.97rem;
+    line-height: 1.8;
+    max-width: 520px;
+    margin-bottom: 2rem;
+  }
+
+  .banner-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .tag {
+    background: rgba(36,87,164,0.12);
+    color: var(--mid-blue);
+    padding: 0.3rem 0.9rem;
+    border-radius: 100px;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    border: 1px solid rgba(36,87,164,0.2);
+  }
+
+  .banner-ctas {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--mid-blue);
+    color: var(--white);
+    padding: 0.75rem 1.75rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    border: none;
+    transition: all 0.25s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .btn-primary:hover {
+    background: var(--navy);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(36,87,164,0.3);
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--mid-blue);
+    padding: 0.75rem 1.75rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+    border: 2px solid var(--mid-blue);
+    transition: all 0.25s;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .btn-outline:hover {
+    background: var(--mid-blue);
+    color: var(--white);
+    transform: translateY(-2px);
+  }
+
+  /* PHOTO */
+  .banner-photo-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .photo-ring {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    border: 4px solid var(--white);
+    box-shadow: 0 0 0 8px rgba(36,87,164,0.15), 0 20px 60px rgba(10,22,40,0.15);
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(135deg, var(--pale) 0%, var(--sky) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .photo-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--mid-blue);
+  }
+
+  .photo-placeholder svg { opacity: 0.5; }
+
+  .photo-placeholder span {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    opacity: 0.6;
+    text-align: center;
+    padding: 0 1.5rem;
+    line-height: 1.4;
+  }
+
+  .photo-badge {
+    position: absolute;
+    bottom: -12px;
+    right: 20px;
+    background: var(--white);
+    border-radius: 12px;
+    padding: 0.5rem 1rem;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .photo-badge-dot {
+    width: 8px;
+    height: 8px;
+    background: #22c55e;
+    border-radius: 50%;
+    animation: pulse-green 2s infinite;
+  }
+
+  @keyframes pulse-green {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .photo-badge span {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  /* STATS SECTION */
+  .stats-section {
+    background: var(--navy);
+    padding: 3rem 0;
+  }
+
+  .stats-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .stat-item {
+    position: relative;
+    padding: 1.5rem;
+  }
+
+  .stat-item::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 20%;
+    height: 60%;
+    width: 1px;
+    background: rgba(255,255,255,0.1);
+  }
+
+  .stat-item:last-child::after { display: none; }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    display: block;
+  }
+
+  .stat-label {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+  }
+
+  /* WORKS SECTION */
+  .works-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .work-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--gray-200);
+    transition: all 0.3s;
+  }
+
+  .work-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .work-card-icon {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+  }
+
+  .work-card:nth-child(1) .work-card-icon { background: linear-gradient(135deg, #dbeafe, #bfdbfe); }
+  .work-card:nth-child(2) .work-card-icon { background: linear-gradient(135deg, #d1fae5, #a7f3d0); }
+  .work-card:nth-child(3) .work-card-icon { background: linear-gradient(135deg, #fef3c7, #fde68a); }
+  .work-card:nth-child(4) .work-card-icon { background: linear-gradient(135deg, #fce7f3, #fbcfe8); }
+  .work-card:nth-child(5) .work-card-icon { background: linear-gradient(135deg, #ede9fe, #ddd6fe); }
+  .work-card:nth-child(6) .work-card-icon { background: linear-gradient(135deg, #ccfbf1, #99f6e4); }
+
+  .work-card-body { padding: 1.25rem 1.5rem 1.5rem; }
+
+  .work-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+
+  .work-card-text {
+    color: var(--text-light);
+    font-size: 0.82rem;
+    line-height: 1.65;
+  }
+
+  /* COLLABORATION SECTION */
+  .collab-section {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--deep) 60%, #1a3a6e 100%);
+    padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .collab-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .collab-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .collab-inner .section-label { justify-content: center; color: var(--sky); }
+  .collab-inner .section-title { color: var(--white); }
+  .collab-inner .section-sub { color: rgba(255,255,255,0.65); margin: 0 auto 2.5rem; }
+
+  .collab-areas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .collab-tag {
+    background: rgba(255,255,255,0.08);
+    color: var(--sky);
+    padding: 0.5rem 1.2rem;
+    border-radius: 100px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.12);
+    transition: all 0.25s;
+  }
+
+  .collab-tag:hover {
+    background: rgba(255,255,255,0.15);
+    border-color: rgba(255,255,255,0.3);
+  }
+
+  /* ──────────────────── ABOUT PAGE ──────────────────── */
+
+  .about-header-section {
+    background: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 100%);
+    padding: 4rem 0 3rem;
+  }
+
+  .career-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .objective-card {
+    background: linear-gradient(135deg, var(--navy), var(--deep));
+    color: var(--white);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .objective-card::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 10rem;
+    color: rgba(255,255,255,0.05);
+    line-height: 1;
+  }
+
+  .objective-card .section-label { color: var(--sky); }
+  .objective-card .section-title { color: var(--white); font-size: 1.8rem; }
+
+  .objective-text {
+    color: rgba(255,255,255,0.8);
+    font-size: 0.92rem;
+    line-height: 1.8;
+    margin-top: 1rem;
+  }
+
+  .summary-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    box-shadow: var(--shadow);
+  }
+
+  .summary-card .section-title { font-size: 1.8rem; }
+
+  .summary-text {
+    color: var(--text-light);
+    font-size: 0.92rem;
+    line-height: 1.8;
+    margin-top: 1rem;
+  }
+
+  /* TIMELINE */
+  .timeline { position: relative; padding-left: 2rem; }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--accent), var(--teal));
+  }
+
+  .timeline-item {
+    position: relative;
+    padding: 0 0 2.5rem 2rem;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    background: var(--accent);
+    border-radius: 50%;
+    border: 3px solid var(--white);
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.2);
+    transform: translateX(calc(-50% + 1px));
+    z-index: 1;
+  }
+
+  .timeline-date {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+
+  .timeline-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.25rem;
+  }
+
+  .timeline-org {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--mid-blue);
+    margin-bottom: 0.5rem;
+  }
+
+  .timeline-desc {
+    color: var(--text-light);
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+
+  /* EDUCATION GRID */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  .edu-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--accent);
+    transition: all 0.3s;
+  }
+
+  .edu-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+
+  .edu-degree {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.3rem;
+  }
+
+  .edu-institution {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--mid-blue);
+    margin-bottom: 0.25rem;
+  }
+
+  .edu-year {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.7rem;
+    color: var(--text-light);
+    letter-spacing: 0.1em;
+  }
+
+  /* TRAININGS */
+  .trainings-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+
+  .training-card {
+    background: var(--white);
+    border-radius: var(--radius-sm);
+    padding: 1.25rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    border: 1px solid var(--gray-200);
+    transition: all 0.25s;
+  }
+
+  .training-card:hover { border-color: var(--accent); box-shadow: var(--shadow); }
+
+  .training-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    background: var(--pale);
+  }
+
+  .training-info h4 {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.2rem;
+  }
+
+  .training-info p {
+    font-size: 0.75rem;
+    color: var(--text-light);
+  }
+
+  /* PUBLICATIONS */
+  .pub-list { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 2.5rem; }
+
+  .pub-item {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--gray-200);
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    transition: all 0.25s;
+  }
+
+  .pub-item:hover { border-color: var(--accent); transform: translateX(4px); }
+
+  .pub-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gray-200);
+    line-height: 1;
+    min-width: 40px;
+    padding-top: 2px;
+  }
+
+  .pub-content h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+    line-height: 1.4;
+  }
+
+  .pub-meta {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-bottom: 0.4rem;
+  }
+
+  .pub-journal {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--mid-blue);
+    font-weight: 500;
+  }
+
+  /* ──────────────────── PROJECTS PAGE ──────────────────── */
+
+  .projects-hero {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+    padding: 4rem 0 3rem;
+    text-align: center;
+  }
+
+  .projects-hero .section-label { justify-content: center; color: var(--sky); }
+  .projects-hero .section-title { color: var(--white); }
+  .projects-hero .section-sub { color: rgba(255,255,255,0.65); margin: 0 auto; }
+
+  .project-card-full {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--gray-200);
+    margin-bottom: 2rem;
+    transition: all 0.3s;
+  }
+
+  .project-card-full:hover { box-shadow: var(--shadow-lg); transform: translateY(-3px); }
+
+  .project-card-header {
+    padding: 1.5rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+  }
+
+  .project-card-full:nth-child(1) .project-card-header { background: linear-gradient(135deg, #dbeafe, #e0f2fe); }
+  .project-card-full:nth-child(2) .project-card-header { background: linear-gradient(135deg, #d1fae5, #ccfbf1); }
+  .project-card-full:nth-child(3) .project-card-header { background: linear-gradient(135deg, #fef3c7, #fde68a); }
+  .project-card-full:nth-child(4) .project-card-header { background: linear-gradient(135deg, #ede9fe, #ddd6fe); }
+
+  .project-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgba(10,22,40,0.15);
+    line-height: 1;
+  }
+
+  .project-header-info h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.25rem;
+  }
+
+  .project-status {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+  }
+
+  .status-active { background: #d1fae5; color: #065f46; }
+  .status-ongoing { background: #dbeafe; color: #1e40af; }
+  .status-planning { background: #fef3c7; color: #92400e; }
+
+  .project-body { padding: 1.75rem 2rem; }
+
+  .project-body p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.75;
+    margin-bottom: 1.25rem;
+  }
+
+  .project-meta-row {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.25rem;
+  }
+
+  .project-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    color: var(--text-light);
+  }
+
+  .project-meta-item strong { color: var(--text); }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--mid-blue);
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 0.5rem 1.1rem;
+    border-radius: 6px;
+    border: 2px solid var(--mid-blue);
+    transition: all 0.25s;
+    margin-right: 0.75rem;
+  }
+
+  .project-link:hover {
+    background: var(--mid-blue);
+    color: var(--white);
+  }
+
+  /* ──────────────────── RESOURCES PAGE ──────────────────── */
+
+  .resources-hero {
+    background: linear-gradient(135deg, #0f2044 0%, #1a3a6e 100%);
+    padding: 4rem 0 3rem;
+    text-align: center;
+  }
+
+  .resources-hero .section-label { justify-content: center; color: var(--sky); }
+  .resources-hero .section-title { color: var(--white); }
+  .resources-hero .section-sub { color: rgba(255,255,255,0.65); margin: 0 auto; }
+
+  .resource-category {
+    padding: 4rem 0;
+  }
+
+  .resource-category:nth-child(even) { background: var(--gray-100); }
+
+  .resource-cat-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .resource-cat-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    flex-shrink: 0;
+  }
+
+  .resource-cat-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .resource-cat-sub {
+    font-size: 0.82rem;
+    color: var(--text-light);
+    margin-top: 0.2rem;
+  }
+
+  .resources-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+
+  .resource-item {
+    background: var(--white);
+    border-radius: var(--radius-sm);
+    padding: 1.25rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    border: 1px solid var(--gray-200);
+    transition: all 0.25s;
+    text-decoration: none;
+    display: block;
+  }
+
+  .resource-item:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+  }
+
+  .resource-item h4 {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.3rem;
+    line-height: 1.4;
+  }
+
+  .resource-item p {
+    font-size: 0.78rem;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+
+  .resource-type {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+  }
+
+  .type-pdf { background: #fee2e2; color: #991b1b; }
+  .type-link { background: #dbeafe; color: #1e40af; }
+  .type-video { background: #d1fae5; color: #065f46; }
+  .type-book { background: #fef3c7; color: #92400e; }
+
+  /* ──────────────────── CONTACT PAGE ──────────────────── */
+
+  .contact-hero {
+    background: linear-gradient(135deg, #e0f2fe 0%, #bfdbfe 100%);
+    padding: 4rem 0 3rem;
+    text-align: center;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3rem;
+    margin-top: 3rem;
+  }
+
+  .contact-details-card {
+    background: var(--navy);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    color: var(--white);
+  }
+
+  .contact-details-card .section-title { color: var(--white); font-size: 1.8rem; }
+  .contact-details-card .section-label { color: var(--sky); }
+
+  .contact-list { display: flex; flex-direction: column; gap: 1.25rem; margin-top: 1.75rem; }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .contact-icon-wrap {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-item-info label {
+    display: block;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 0.2rem;
+  }
+
+  .contact-item-info span {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.9);
+    font-weight: 500;
+  }
+
+  .contact-socials-row {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .contact-social {
+    flex: 1;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    padding: 0.75rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--white);
+    font-size: 0.72rem;
+    transition: all 0.25s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .contact-social:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-2px);
+  }
+
+  /* FORM */
+  .contact-form-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    box-shadow: var(--shadow);
+  }
+
+  .contact-form-card .section-title { font-size: 1.8rem; }
+
+  .form-group {
+    margin-top: 1.5rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--gray-600);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid var(--gray-200);
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    background: var(--off-white);
+    transition: all 0.25s;
+    outline: none;
+  }
+
+  .form-group input:focus,
+  .form-group textarea:focus,
+  .form-group select:focus {
+    border-color: var(--accent);
+    background: var(--white);
+    box-shadow: 0 0 0 4px rgba(59,130,246,0.1);
+  }
+
+  .form-group textarea { min-height: 120px; resize: vertical; }
+
+  .form-submit {
+    background: var(--mid-blue);
+    color: var(--white);
+    padding: 0.875rem 2.5rem;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    border: none;
+    transition: all 0.25s;
+    margin-top: 1.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .form-submit:hover {
+    background: var(--navy);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(36,87,164,0.3);
+  }
+
+  /* ── MAP PLACEHOLDER ── */
+  .map-placeholder {
+    background: var(--gray-100);
+    border-radius: var(--radius);
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+    border: 2px dashed var(--gray-200);
+    flex-direction: column;
+    gap: 0.5rem;
+    color: var(--gray-400);
+  }
+
+  /* DIVIDER */
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gray-200), transparent);
+    margin: 0;
+  }
+
+  /* SECTION BG VARIATIONS */
+  .bg-white { background: var(--white); }
+  .bg-light { background: var(--gray-100); }
+  .bg-navy { background: var(--navy); }
+  .bg-blue-light { background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); }
+
+  /* INFOGRAPHIC ITEMS */
+  .infographic-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .infographic-item {
+    text-align: center;
+    padding: 2rem 1.25rem;
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--gray-200);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .infographic-item:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+
+  .infographic-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+  }
+
+  .infographic-item:nth-child(1)::before { background: var(--accent); }
+  .infographic-item:nth-child(2)::before { background: var(--teal); }
+  .infographic-item:nth-child(3)::before { background: var(--gold); }
+  .infographic-item:nth-child(4)::before { background: #8b5cf6; }
+
+  .infographic-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+  }
+
+  .infographic-item:nth-child(1) .infographic-circle { background: #dbeafe; }
+  .infographic-item:nth-child(2) .infographic-circle { background: #d1fae5; }
+  .infographic-item:nth-child(3) .infographic-circle { background: #fef3c7; }
+  .infographic-item:nth-child(4) .infographic-circle { background: #ede9fe; }
+
+  .infographic-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1;
+  }
+
+  .infographic-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-top: 0.35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .infographic-desc {
+    font-size: 0.75rem;
+    color: var(--gray-400);
+    margin-top: 0.5rem;
+    line-height: 1.5;
+  }
+
+  /* page transitions */
+  .page { animation: fadeIn 0.35s ease; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* Responsive tweaks */
+  @media (max-width: 900px) {
+    .banner-inner { grid-template-columns: 1fr; }
+    .banner-photo-wrap { display: none; }
+    .works-grid { grid-template-columns: repeat(2, 1fr); }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .infographic-row { grid-template-columns: repeat(2, 1fr); }
+    .career-grid { grid-template-columns: 1fr; }
+    .edu-grid { grid-template-columns: 1fr; }
+    .trainings-grid { grid-template-columns: 1fr 1fr; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .resources-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════ HOME PAGE ══════════════════ -->
+<div id="page-home" class="page active">
+
+  <header>
+    <div class="header-inner">
+      <div class="logo" onclick="showPage('home')">
+        <span class="logo-name">Dr. Your Name</span>
+        <span class="logo-title">Researcher · Academic · Public Health Expert</span>
+      </div>
+      <nav>
+        <a href="#" class="active" onclick="showPage('home'); return false;">Home</a>
+        <a href="#" onclick="showPage('about'); return false;">About</a>
+        <a href="#" onclick="showPage('projects'); return false;">Projects</a>
+        <a href="#" onclick="showPage('resources'); return false;">Resources</a>
+        <a href="#" onclick="showPage('contact'); return false;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- BANNER -->
+  <section class="home-banner">
+    <div class="banner-inner">
+      <div class="banner-content">
+        <p class="banner-kicker">Researcher &amp; Academic</p>
+        <h1 class="banner-name">Dr. <span>Your Name</span></h1>
+        <p class="banner-role">Public Health Researcher · Health Informatician · Educator</p>
+        <p class="banner-desc">
+          Advancing evidence-based solutions at the intersection of public health, digital health systems, and epidemiology. Committed to translating rigorous research into actionable policy and meaningful impact for communities worldwide.
+        </p>
+        <div class="banner-tags">
+          <span class="tag">🔬 Epidemiology</span>
+          <span class="tag">💻 Health Informatics</span>
+          <span class="tag">🌍 Global Health</span>
+          <span class="tag">📊 Biostatistics</span>
+          <span class="tag">📖 Medical Education</span>
+        </div>
+        <div class="banner-ctas">
+          <button class="btn-primary" onclick="showPage('about')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+            About Me
+          </button>
+          <button class="btn-outline" onclick="showPage('projects')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+            My Projects
+          </button>
+        </div>
+      </div>
+      <div class="banner-photo-wrap">
+        <div class="photo-ring">
+          <div class="photo-placeholder">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#2457a4" stroke-width="1.5">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+            <span>Replace with your profile photo</span>
+          </div>
+        </div>
+        <div class="photo-badge">
+          <div class="photo-badge-dot"></div>
+          <span>Open to Collaboration</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-num">12+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">45+</span>
+        <span class="stat-label">Publications</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">8</span>
+        <span class="stat-label">Active Projects</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">500+</span>
+        <span class="stat-label">Citations</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKS & EXPERTISE -->
+  <section class="section bg-white">
+    <div class="container">
+      <p class="section-label">Expertise &amp; Impact</p>
+      <h2 class="section-title">Research, Works &amp; Experience</h2>
+      <p class="section-sub">A multidisciplinary approach bridging clinical knowledge, data science, and public health policy to drive systemic change.</p>
+
+      <div class="infographic-row">
+        <div class="infographic-item">
+          <div class="infographic-circle">🔬</div>
+          <div class="infographic-num">15+</div>
+          <div class="infographic-label">Research Projects</div>
+          <div class="infographic-desc">Epidemiology, infectious disease &amp; NCD studies</div>
+        </div>
+        <div class="infographic-item">
+          <div class="infographic-circle">🏥</div>
+          <div class="infographic-num">8+</div>
+          <div class="infographic-label">Institutions</div>
+          <div class="infographic-desc">Academic, clinical &amp; government partnerships</div>
+        </div>
+        <div class="infographic-item">
+          <div class="infographic-circle">🌐</div>
+          <div class="infographic-num">5</div>
+          <div class="infographic-label">Countries</div>
+          <div class="infographic-desc">Multi-country global health initiatives</div>
+        </div>
+        <div class="infographic-item">
+          <div class="infographic-circle">👩‍🎓</div>
+          <div class="infographic-num">120+</div>
+          <div class="infographic-label">Students Mentored</div>
+          <div class="infographic-desc">Graduate &amp; postgraduate mentorship</div>
+        </div>
+      </div>
+
+      <div class="works-grid" style="margin-top:3rem;">
+        <div class="work-card">
+          <div class="work-card-icon">🧬</div>
+          <div class="work-card-body">
+            <h3 class="work-card-title">Epidemiological Research</h3>
+            <p class="work-card-text">Designing and executing population-level studies on infectious diseases, chronic conditions, and social determinants of health.</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card-icon">💻</div>
+          <div class="work-card-body">
+            <h3 class="work-card-title">Health Informatics</h3>
+            <p class="work-card-text">Developing digital health systems, clinical decision support tools, and health data infrastructure for low-resource settings.</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card-icon">📋</div>
+          <div class="work-card-body">
+            <h3 class="work-card-title">Health Policy &amp; Advocacy</h3>
+            <p class="work-card-text">Translating research into evidence-based policies at national and international levels in collaboration with health ministries.</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card-icon">📚</div>
+          <div class="work-card-body">
+            <h3 class="work-card-title">Academic Teaching</h3>
+            <p class="work-card-text">Course development and delivery in public health, epidemiology, research methodology, and health informatics.</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card-icon">📊</div>
+          <div class="work-card-body">
+            <h3 class="work-card-title">Biostatistics &amp; Analysis</h3>
+            <p class="work-card-text">Advanced statistical modelling, spatial epidemiology, machine learning applications in health data science.</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card-icon">🤝</div>
+          <div class="work-card-body">
+            <h3 class="work-card-title">Capacity Building</h3>
+            <p class="work-card-text">Training health professionals in research methods, data collection tools, and evidence-based practice across the region.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLABORATION CALL -->
+  <section class="collab-section">
+    <div class="collab-inner">
+      <p class="section-label">Open Call</p>
+      <h2 class="section-title" style="font-size:2.6rem;">Research Collaboration</h2>
+      <p class="section-sub">I welcome interdisciplinary collaborations with researchers, institutions, and organisations aligned with advancing global health outcomes. Let's build impactful science together.</p>
+      <div class="collab-areas">
+        <span class="collab-tag">🔬 Epidemiology Studies</span>
+        <span class="collab-tag">💻 Digital Health Systems</span>
+        <span class="collab-tag">🌍 Global Health Interventions</span>
+        <span class="collab-tag">📊 Data Analytics &amp; AI</span>
+        <span class="collab-tag">📖 Systematic Reviews</span>
+        <span class="collab-tag">🏥 Health Systems Research</span>
+        <span class="collab-tag">🎓 Academic Exchange</span>
+      </div>
+      <button class="btn-primary" onclick="showPage('contact')" style="margin:0 auto;display:inline-flex;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+        Get in Touch
+      </button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-name">Dr. Your Name</div>
+        <p>Researcher · Educator · Public Health Expert</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://linkedin.com" target="_blank" class="social-icon linkedin" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://researchgate.net" target="_blank" class="social-icon researchgate" title="ResearchGate">
+          <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg"><text y="18" font-size="14" font-weight="bold" font-family="serif">RG</text></svg>
+        </a>
+        <a href="https://scholar.google.com" target="_blank" class="social-icon scholar" title="Google Scholar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 3L1 9l11 6 9-4.91V17M1 9v7"/><path d="M5 13.18v4L12 21l7-3.82v-4"/></svg>
+        </a>
+      </div>
+      <div class="footer-right">
+        <p>© 2026 Dr. Your Name</p>
+        <p style="margin-top:0.25rem;font-size:0.7rem;">All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════ ABOUT PAGE ══════════════════ -->
+<div id="page-about" class="page">
+  <header>
+    <div class="header-inner">
+      <div class="logo" onclick="showPage('home')">
+        <span class="logo-name">Dr. Your Name</span>
+        <span class="logo-title">Researcher · Academic · Public Health Expert</span>
+      </div>
+      <nav>
+        <a href="#" onclick="showPage('home'); return false;">Home</a>
+        <a href="#" class="active" onclick="showPage('about'); return false;">About</a>
+        <a href="#" onclick="showPage('projects'); return false;">Projects</a>
+        <a href="#" onclick="showPage('resources'); return false;">Resources</a>
+        <a href="#" onclick="showPage('contact'); return false;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ABOUT HERO -->
+  <section class="about-header-section">
+    <div class="container">
+      <p class="section-label">Professional Profile</p>
+      <h1 class="section-title" style="font-size:3rem;">About Me</h1>
+      <p class="section-sub">Academic researcher, educator and public health professional with over a decade of experience driving impactful health solutions.</p>
+    </div>
+  </section>
+
+  <!-- CAREER OBJECTIVE & SUMMARY -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="career-grid">
+        <div class="objective-card">
+          <p class="section-label">Direction</p>
+          <h2 class="section-title" style="font-size:1.8rem;color:white;">Career Objective</h2>
+          <p class="objective-text">To leverage extensive expertise in epidemiology, health informatics, and public health research to develop innovative, evidence-based solutions that address complex health challenges, improve health systems, and advance health equity in low- and middle-income countries.</p>
+          <p class="objective-text" style="margin-top:1rem;">Committed to collaborative, interdisciplinary approaches that bridge the gap between research, policy, and practice for sustainable health improvements at scale.</p>
+        </div>
+        <div class="summary-card">
+          <p class="section-label">Overview</p>
+          <h2 class="section-title" style="font-size:1.8rem;">Career Summary</h2>
+          <p class="summary-text">A highly accomplished public health researcher and academic with over 12 years of experience spanning clinical medicine, epidemiology, health informatics, and global health. Proven track record of leading high-impact research projects, securing competitive funding, and publishing in peer-reviewed journals.</p>
+          <p class="summary-text" style="margin-top:0.75rem;">Expertise in designing mixed-methods studies, analysing complex health data, and translating findings into policy-relevant recommendations. Committed to mentoring emerging researchers and building institutional research capacity.</p>
+          <div style="display:flex;gap:1rem;margin-top:1.5rem;flex-wrap:wrap;">
+            <div style="text-align:center;padding:0.75rem 1.25rem;background:var(--pale);border-radius:10px;">
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--navy);">MBBS</div>
+              <div style="font-size:0.7rem;color:var(--text-light);text-transform:uppercase;letter-spacing:0.05em;">Medical Degree</div>
+            </div>
+            <div style="text-align:center;padding:0.75rem 1.25rem;background:var(--pale);border-radius:10px;">
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--navy);">MPH</div>
+              <div style="font-size:0.7rem;color:var(--text-light);text-transform:uppercase;letter-spacing:0.05em;">Public Health</div>
+            </div>
+            <div style="text-align:center;padding:0.75rem 1.25rem;background:var(--pale);border-radius:10px;">
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--navy);">PhD</div>
+              <div style="font-size:0.7rem;color:var(--text-light);text-transform:uppercase;letter-spacing:0.05em;">Epidemiology</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK EXPERIENCE -->
+  <section class="section bg-light">
+    <div class="container">
+      <p class="section-label">Career Journey</p>
+      <h2 class="section-title">Work Experience</h2>
+      <p class="section-sub">A progression of roles spanning academia, research institutions, and public health organisations.</p>
+      <div class="timeline" style="margin-top:3rem;">
+        <div class="timeline-item">
+          <p class="timeline-date">2021 — Present</p>
+          <h3 class="timeline-title">Associate Professor &amp; Principal Investigator</h3>
+          <p class="timeline-org">Department of Epidemiology &amp; Public Health, University Name</p>
+          <p class="timeline-desc">Leading a research group focused on digital epidemiology and health systems strengthening. Overseeing 5 PhD students and managing 3 active research grants. Teaching postgraduate modules in advanced epidemiology and health informatics.</p>
+        </div>
+        <div class="timeline-item">
+          <p class="timeline-date">2018 — 2021</p>
+          <h3 class="timeline-title">Research Fellow</h3>
+          <p class="timeline-org">Global Health Institute, Institution Name</p>
+          <p class="timeline-desc">Led cross-national research projects on infectious disease surveillance and health system resilience. Published 14 peer-reviewed papers. Developed a community-based health monitoring platform deployed across 3 countries.</p>
+        </div>
+        <div class="timeline-item">
+          <p class="timeline-date">2015 — 2018</p>
+          <h3 class="timeline-title">Medical Officer &amp; Health Informatician</h3>
+          <p class="timeline-org">Ministry of Health, Government Agency</p>
+          <p class="timeline-desc">Spearheaded implementation of national electronic health records system serving 200+ health facilities. Contributed to national disease surveillance protocols and health workforce training programmes.</p>
+        </div>
+        <div class="timeline-item">
+          <p class="timeline-date">2012 — 2015</p>
+          <h3 class="timeline-title">Medical Officer</h3>
+          <p class="timeline-org">Regional Hospital, Healthcare Organisation</p>
+          <p class="timeline-desc">Provided clinical care in internal medicine and preventive health. Initiated data quality improvement initiatives and contributed to departmental research activities. Participated in public health outbreak responses.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section bg-white">
+    <div class="container">
+      <p class="section-label">Academic Formation</p>
+      <h2 class="section-title">Education</h2>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <div class="edu-degree">PhD in Epidemiology</div>
+          <div class="edu-institution">University Name, Country</div>
+          <div class="edu-year">2015 – 2019</div>
+          <p style="font-size:0.8rem;color:var(--text-light);margin-top:0.5rem;line-height:1.6;">Thesis: "Digital Surveillance Systems and Outbreak Response Capacity in Low-Income Settings"</p>
+        </div>
+        <div class="edu-card">
+          <div class="edu-degree">Master of Public Health (MPH)</div>
+          <div class="edu-institution">School of Public Health, University</div>
+          <div class="edu-year">2013 – 2015</div>
+          <p style="font-size:0.8rem;color:var(--text-light);margin-top:0.5rem;line-height:1.6;">Specialisation in Health Informatics and Epidemiology. Graduated with Distinction.</p>
+        </div>
+        <div class="edu-card">
+          <div class="edu-degree">MBBS (Bachelor of Medicine, Bachelor of Surgery)</div>
+          <div class="edu-institution">Medical College, University</div>
+          <div class="edu-year">2006 – 2012</div>
+          <p style="font-size:0.8rem;color:var(--text-light);margin-top:0.5rem;line-height:1.6;">Clinical medicine with rotations in internal medicine, surgery, paediatrics, and community health.</p>
+        </div>
+        <div class="edu-card" style="border-color:var(--teal);">
+          <div class="edu-degree">Postdoctoral Fellowship</div>
+          <div class="edu-institution">Global Health Research Institute</div>
+          <div class="edu-year">2019 – 2021</div>
+          <p style="font-size:0.8rem;color:var(--text-light);margin-top:0.5rem;line-height:1.6;">Research focus on AI applications in disease surveillance and predictive health analytics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAININGS -->
+  <section class="section bg-light">
+    <div class="container">
+      <p class="section-label">Professional Development</p>
+      <h2 class="section-title">Trainings &amp; Certifications</h2>
+      <div class="trainings-grid">
+        <div class="training-card"><div class="training-icon">📊</div><div class="training-info"><h4>Advanced Biostatistics</h4><p>Johns Hopkins University · 2022</p></div></div>
+        <div class="training-card"><div class="training-icon">🤖</div><div class="training-info"><h4>Machine Learning in Health</h4><p>Stanford Online · 2023</p></div></div>
+        <div class="training-card"><div class="training-icon">📋</div><div class="training-info"><h4>Systematic Reviews &amp; Meta-Analysis</h4><p>Cochrane Collaboration · 2021</p></div></div>
+        <div class="training-card"><div class="training-icon">🌐</div><div class="training-info"><h4>Global Health Leadership</h4><p>WHO Leadership Academy · 2020</p></div></div>
+        <div class="training-card"><div class="training-icon">💻</div><div class="training-info"><h4>Health Informatics Implementation</h4><p>HIMSS Certification · 2019</p></div></div>
+        <div class="training-card"><div class="training-icon">🔬</div><div class="training-info"><h4>Clinical Research Methodology</h4><p>NIH Training Program · 2018</p></div></div>
+        <div class="training-card"><div class="training-icon">📖</div><div class="training-info"><h4>Scientific Writing &amp; Publication</h4><p>Nature Masterclasses · 2022</p></div></div>
+        <div class="training-card"><div class="training-icon">🏛️</div><div class="training-info"><h4>Research Ethics &amp; Integrity</h4><p>CITI Program · 2021</p></div></div>
+        <div class="training-card"><div class="training-icon">📡</div><div class="training-info"><h4>Geographic Information Systems</h4><p>ESRI Training · 2020</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section class="section bg-white">
+    <div class="container">
+      <p class="section-label">Scholarly Output</p>
+      <h2 class="section-title">Selected Publications</h2>
+      <p class="section-sub">A curated selection from 45+ peer-reviewed publications in international journals.</p>
+      <div class="pub-list">
+        <div class="pub-item">
+          <div class="pub-num">01</div>
+          <div class="pub-content">
+            <h4>Digital Surveillance Systems and Epidemic Response Capacity in Sub-Saharan Africa: A Systematic Review</h4>
+            <p class="pub-meta">Your Name, Co-Author A, Co-Author B · 2024</p>
+            <p class="pub-journal">The Lancet Digital Health · DOI: 10.xxxx/xxxxx</p>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-num">02</div>
+          <div class="pub-content">
+            <h4>Artificial Intelligence in Low-Resource Health Settings: Opportunities, Challenges and Ethical Considerations</h4>
+            <p class="pub-meta">Your Name, Co-Author C · 2023</p>
+            <p class="pub-journal">PLOS Medicine · DOI: 10.xxxx/xxxxx</p>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-num">03</div>
+          <div class="pub-content">
+            <h4>Determinants of Health Information System Adoption in Public Hospitals: A Mixed-Methods Study</h4>
+            <p class="pub-meta">Your Name, Co-Author D, Co-Author E · 2022</p>
+            <p class="pub-journal">International Journal of Medical Informatics · DOI: 10.xxxx/xxxxx</p>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-num">04</div>
+          <div class="pub-content">
+            <h4>Community-Based Participatory Research for Non-Communicable Disease Prevention: Evidence from a Multi-Site Trial</h4>
+            <p class="pub-meta">Your Name et al. · 2021</p>
+            <p class="pub-journal">Bulletin of the World Health Organization · DOI: 10.xxxx/xxxxx</p>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-num">05</div>
+          <div class="pub-content">
+            <h4>Epidemiology of Antimicrobial Resistance in Community Settings: A Population-Based Cohort Study</h4>
+            <p class="pub-meta">Your Name, Co-Author F · 2020</p>
+            <p class="pub-journal">Emerging Infectious Diseases · DOI: 10.xxxx/xxxxx</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-name">Dr. Your Name</div>
+        <p>Researcher · Educator · Public Health Expert</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://linkedin.com" target="_blank" class="social-icon linkedin" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://researchgate.net" target="_blank" class="social-icon researchgate" title="ResearchGate">
+          <svg viewBox="0 0 24 24" fill="white"><text y="18" font-size="14" font-weight="bold" font-family="serif">RG</text></svg>
+        </a>
+        <a href="https://scholar.google.com" target="_blank" class="social-icon scholar" title="Google Scholar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 3L1 9l11 6 9-4.91V17M1 9v7"/><path d="M5 13.18v4L12 21l7-3.82v-4"/></svg>
+        </a>
+      </div>
+      <div class="footer-right"><p>© 2026 Dr. Your Name</p></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════ PROJECTS PAGE ══════════════════ -->
+<div id="page-projects" class="page">
+  <header>
+    <div class="header-inner">
+      <div class="logo" onclick="showPage('home')">
+        <span class="logo-name">Dr. Your Name</span>
+        <span class="logo-title">Researcher · Academic · Public Health Expert</span>
+      </div>
+      <nav>
+        <a href="#" onclick="showPage('home'); return false;">Home</a>
+        <a href="#" onclick="showPage('about'); return false;">About</a>
+        <a href="#" class="active" onclick="showPage('projects'); return false;">Projects</a>
+        <a href="#" onclick="showPage('resources'); return false;">Resources</a>
+        <a href="#" onclick="showPage('contact'); return false;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="projects-hero">
+    <div class="container">
+      <p class="section-label">Active Research</p>
+      <h1 class="section-title" style="color:white;font-size:3rem;">Current Projects</h1>
+      <p class="section-sub">Ongoing research initiatives spanning epidemiology, health systems, and digital health innovation.</p>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container">
+      <p class="section-label">Research Portfolio</p>
+      <h2 class="section-title">My Current Projects</h2>
+      <p class="section-sub">Each project addresses a critical gap in public health knowledge with robust methodology and multi-stakeholder partnerships.</p>
+
+      <div style="margin-top:3rem;">
+        <div class="project-card-full">
+          <div class="project-card-header">
+            <div class="project-num">01</div>
+            <div class="project-header-info">
+              <h3>AI-Powered Disease Surveillance System for Low-Resource Settings</h3>
+              <span class="project-status status-active">● Active</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <p>This project develops and validates a machine learning-driven disease surveillance platform designed for deployment in health facilities with limited digital infrastructure. The system integrates real-time data from community health workers, facility-level reports, and environmental sensors to enable early outbreak detection with a minimum 5-day advance warning.</p>
+            <div class="project-meta-row">
+              <div class="project-meta-item">📅 <strong>Duration:</strong> 2023 – 2026</div>
+              <div class="project-meta-item">💰 <strong>Funder:</strong> Wellcome Trust / NIH</div>
+              <div class="project-meta-item">🌍 <strong>Sites:</strong> 3 countries</div>
+            </div>
+            <a href="#" class="project-link">📄 Project Page</a>
+            <a href="#" class="project-link">📊 Data Dashboard</a>
+            <a href="#" class="project-link">📖 Publications</a>
+          </div>
+        </div>
+
+        <div class="project-card-full">
+          <div class="project-card-header">
+            <div class="project-num">02</div>
+            <div class="project-header-info">
+              <h3>Non-Communicable Disease Prevention Through Community Engagement</h3>
+              <span class="project-status status-ongoing">● Ongoing</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <p>A community-based participatory research project evaluating the effectiveness of culturally-adapted health promotion interventions on NCD risk factors, including hypertension, diabetes, and obesity. The project uses a cluster-randomised controlled trial design across 24 communities with a 3-year follow-up period.</p>
+            <div class="project-meta-row">
+              <div class="project-meta-item">📅 <strong>Duration:</strong> 2022 – 2025</div>
+              <div class="project-meta-item">💰 <strong>Funder:</strong> WHO / National Research Fund</div>
+              <div class="project-meta-item">👥 <strong>Participants:</strong> 4,800</div>
+            </div>
+            <a href="#" class="project-link">📄 Protocol Paper</a>
+            <a href="#" class="project-link">🗺️ Trial Registry</a>
+          </div>
+        </div>
+
+        <div class="project-card-full">
+          <div class="project-card-header">
+            <div class="project-num">03</div>
+            <div class="project-header-info">
+              <h3>Electronic Health Records Implementation &amp; Quality Improvement</h3>
+              <span class="project-status status-ongoing">● Ongoing</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <p>This implementation science project evaluates barriers, facilitators, and health outcomes associated with EHR adoption in public district hospitals. Using a mixed-methods approach, the research develops a practical implementation framework and toolkit for national scale-up of digital health records with a focus on interoperability and data quality.</p>
+            <div class="project-meta-row">
+              <div class="project-meta-item">📅 <strong>Duration:</strong> 2024 – 2027</div>
+              <div class="project-meta-item">💰 <strong>Funder:</strong> Digital Health Initiative</div>
+              <div class="project-meta-item">🏥 <strong>Sites:</strong> 18 hospitals</div>
+            </div>
+            <a href="#" class="project-link">📄 Study Overview</a>
+            <a href="#" class="project-link">🔧 Open Toolkit</a>
+          </div>
+        </div>
+
+        <div class="project-card-full">
+          <div class="project-card-header">
+            <div class="project-num">04</div>
+            <div class="project-header-info">
+              <h3>Antimicrobial Resistance Epidemiology in Community Settings</h3>
+              <span class="project-status status-planning">⚙ Planning Phase</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <p>A prospective cohort study investigating the emergence, spread, and determinants of antimicrobial resistance in community settings. The project leverages genomic surveillance, spatial epidemiology, and social network analysis to map transmission pathways and identify high-risk population clusters for targeted intervention.</p>
+            <div class="project-meta-row">
+              <div class="project-meta-item">📅 <strong>Duration:</strong> 2025 – 2029</div>
+              <div class="project-meta-item">💰 <strong>Funder:</strong> Under review – UKRI</div>
+              <div class="project-meta-item">🔬 <strong>Approach:</strong> Genomic + Spatial</div>
+            </div>
+            <a href="#" class="project-link">📋 Concept Note</a>
+            <a href="#" class="project-link">🤝 Collaborate</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-name">Dr. Your Name</div>
+        <p>Researcher · Educator · Public Health Expert</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://linkedin.com" target="_blank" class="social-icon linkedin" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://researchgate.net" target="_blank" class="social-icon researchgate" title="ResearchGate">
+          <svg viewBox="0 0 24 24" fill="white"><text y="18" font-size="14" font-weight="bold" font-family="serif">RG</text></svg>
+        </a>
+        <a href="https://scholar.google.com" target="_blank" class="social-icon scholar" title="Google Scholar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 3L1 9l11 6 9-4.91V17M1 9v7"/><path d="M5 13.18v4L12 21l7-3.82v-4"/></svg>
+        </a>
+      </div>
+      <div class="footer-right"><p>© 2026 Dr. Your Name</p></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════ RESOURCES PAGE ══════════════════ -->
+<div id="page-resources" class="page">
+  <header>
+    <div class="header-inner">
+      <div class="logo" onclick="showPage('home')">
+        <span class="logo-name">Dr. Your Name</span>
+        <span class="logo-title">Researcher · Academic · Public Health Expert</span>
+      </div>
+      <nav>
+        <a href="#" onclick="showPage('home'); return false;">Home</a>
+        <a href="#" onclick="showPage('about'); return false;">About</a>
+        <a href="#" onclick="showPage('projects'); return false;">Projects</a>
+        <a href="#" class="active" onclick="showPage('resources'); return false;">Resources</a>
+        <a href="#" onclick="showPage('contact'); return false;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="resources-hero">
+    <div class="container">
+      <p class="section-label">Knowledge Hub</p>
+      <h1 class="section-title" style="color:white;font-size:3rem;">Resources</h1>
+      <p class="section-sub">Curated reading lists, tools, and references across public health, informatics, philosophy, literature, and beyond.</p>
+    </div>
+  </section>
+
+  <!-- PUBLIC HEALTH -->
+  <div class="resource-category">
+    <div class="container">
+      <div class="resource-cat-header">
+        <div class="resource-cat-icon" style="background:#dbeafe;">🏥</div>
+        <div>
+          <h2 class="resource-cat-title">Public Health</h2>
+          <p class="resource-cat-sub">Epidemiology, global health, policy, and prevention science resources</p>
+        </div>
+      </div>
+      <div class="resources-grid">
+        <a href="#" class="resource-item"><h4>WHO Global Health Observatory Data Repository</h4><p>Comprehensive global health statistics and data visualisations for 194 member states.</p><span class="resource-type type-link">🔗 Web Tool</span></a>
+        <a href="#" class="resource-item"><h4>Global Burden of Disease Study</h4><p>Annual systematic analysis measuring mortality, morbidity, and risk factors worldwide.</p><span class="resource-type type-link">🔗 Database</span></a>
+        <a href="#" class="resource-item"><h4>Epidemiology: An Introduction – Kenneth Rothman</h4><p>Foundational epidemiology textbook covering study design, bias and confounding.</p><span class="resource-type type-book">📚 Textbook</span></a>
+        <a href="#" class="resource-item"><h4>CDC MMWR Weekly Reports</h4><p>Morbidity and Mortality Weekly Report for current public health data and surveillance.</p><span class="resource-type type-link">🔗 Journal</span></a>
+        <a href="#" class="resource-item"><h4>Health Systems Strengthening Toolkit</h4><p>WHO practical tools for health systems assessment and improvement planning.</p><span class="resource-type type-pdf">📄 PDF Guide</span></a>
+        <a href="#" class="resource-item"><h4>Introduction to Public Health Practice</h4><p>Open-access course materials covering core public health competencies and methods.</p><span class="resource-type type-video">▶ Course</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEALTH INFORMATICS -->
+  <div class="resource-category" style="background:var(--gray-100);">
+    <div class="container">
+      <div class="resource-cat-header">
+        <div class="resource-cat-icon" style="background:#d1fae5;">💻</div>
+        <div>
+          <h2 class="resource-cat-title">Health Informatics</h2>
+          <p class="resource-cat-sub">Digital health, EHR systems, clinical decision support, and health data science</p>
+        </div>
+      </div>
+      <div class="resources-grid">
+        <a href="#" class="resource-item"><h4>FHIR Implementation Guide</h4><p>HL7 Fast Healthcare Interoperability Resources specification and implementation guides.</p><span class="resource-type type-link">🔗 Standard</span></a>
+        <a href="#" class="resource-item"><h4>Biomedical Informatics – Shortliffe &amp; Cimino</h4><p>Comprehensive reference covering all aspects of biomedical and health informatics.</p><span class="resource-type type-book">📚 Textbook</span></a>
+        <a href="#" class="resource-item"><h4>OpenMRS Developer Guide</h4><p>Documentation for the open-source medical records platform used in 40+ countries.</p><span class="resource-type type-link">🔗 Documentation</span></a>
+        <a href="#" class="resource-item"><h4>Machine Learning for Healthcare</h4><p>MIT OpenCourseWare materials on clinical prediction models and healthcare AI.</p><span class="resource-type type-video">▶ Course</span></a>
+        <a href="#" class="resource-item"><h4>Digital Health Implementation Playbook</h4><p>WHO guidance for national digital health strategies and implementation frameworks.</p><span class="resource-type type-pdf">📄 PDF</span></a>
+        <a href="#" class="resource-item"><h4>Journal of the American Medical Informatics Association</h4><p>Leading peer-reviewed journal publishing health informatics research and methods.</p><span class="resource-type type-link">🔗 Journal</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HISTORY AND PHILOSOPHY -->
+  <div class="resource-category">
+    <div class="container">
+      <div class="resource-cat-header">
+        <div class="resource-cat-icon" style="background:#fef3c7;">📜</div>
+        <div>
+          <h2 class="resource-cat-title">History &amp; Philosophy</h2>
+          <p class="resource-cat-sub">Philosophy of medicine, history of science, ethics, and intellectual foundations</p>
+        </div>
+      </div>
+      <div class="resources-grid">
+        <a href="#" class="resource-item"><h4>The Structure of Scientific Revolutions – T.S. Kuhn</h4><p>Landmark text on how scientific paradigms shift, with profound implications for medicine.</p><span class="resource-type type-book">📚 Classic</span></a>
+        <a href="#" class="resource-item"><h4>The Birth of the Clinic – Michel Foucault</h4><p>Archaeological analysis of the emergence of clinical medicine and medical perception.</p><span class="resource-type type-book">📚 Classic</span></a>
+        <a href="#" class="resource-item"><h4>History of Medicine – Roy Porter</h4><p>Accessible comprehensive survey from antiquity through the twentieth century.</p><span class="resource-type type-book">📚 History</span></a>
+        <a href="#" class="resource-item"><h4>Principles of Biomedical Ethics – Beauchamp &amp; Childress</h4><p>Foundational bioethics text covering autonomy, beneficence, non-maleficence, and justice.</p><span class="resource-type type-book">📚 Ethics</span></a>
+        <a href="#" class="resource-item"><h4>The Logic of Scientific Discovery – Karl Popper</h4><p>Philosophical foundations of scientific methodology and the principle of falsifiability.</p><span class="resource-type type-book">📚 Philosophy</span></a>
+        <a href="#" class="resource-item"><h4>Journal of the History of Medicine</h4><p>Peer-reviewed journal on the historical development of medicine and health.</p><span class="resource-type type-link">🔗 Journal</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- LITERATURE -->
+  <div class="resource-category" style="background:var(--gray-100);">
+    <div class="container">
+      <div class="resource-cat-header">
+        <div class="resource-cat-icon" style="background:#ede9fe;">📖</div>
+        <div>
+          <h2 class="resource-cat-title">Literature</h2>
+          <p class="resource-cat-sub">Narrative medicine, health humanities, creative nonfiction, and recommended reading</p>
+        </div>
+      </div>
+      <div class="resources-grid">
+        <a href="#" class="resource-item"><h4>The Spirit Catches You and You Fall Down – A. Fadiman</h4><p>A profound exploration of cultural collision in medicine and the meaning of care.</p><span class="resource-type type-book">📚 Narrative</span></a>
+        <a href="#" class="resource-item"><h4>Being Mortal – Atul Gawande</h4><p>A surgeon's reflection on medicine's limits and the importance of dying well.</p><span class="resource-type type-book">📚 Narrative</span></a>
+        <a href="#" class="resource-item"><h4>When Breath Becomes Air – Paul Kalanithi</h4><p>A neurosurgeon's memoir on life, death, and what makes human existence meaningful.</p><span class="resource-type type-book">📚 Memoir</span></a>
+        <a href="#" class="resource-item"><h4>The Plague – Albert Camus</h4><p>Allegorical novel exploring epidemic, human solidarity, and medical response.</p><span class="resource-type type-book">📚 Fiction</span></a>
+        <a href="#" class="resource-item"><h4>Mountains Beyond Mountains – Tracy Kidder</h4><p>The story of Paul Farmer and Partners in Health bringing medicine to the poor.</p><span class="resource-type type-book">📚 Biography</span></a>
+        <a href="#" class="resource-item"><h4>Literature and Medicine Journal</h4><p>Academic journal exploring the intersections of literary studies and medical practice.</p><span class="resource-type type-link">🔗 Journal</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MISCELLANEOUS -->
+  <div class="resource-category">
+    <div class="container">
+      <div class="resource-cat-header">
+        <div class="resource-cat-icon" style="background:#ccfbf1;">🌟</div>
+        <div>
+          <h2 class="resource-cat-title">Miscellaneous</h2>
+          <p class="resource-cat-sub">Productivity tools, research software, podcasts, and other curated resources</p>
+        </div>
+      </div>
+      <div class="resources-grid">
+        <a href="#" class="resource-item"><h4>Zotero Reference Manager</h4><p>Free, open-source reference management software for collecting, organising and citing research.</p><span class="resource-type type-link">🔗 Tool</span></a>
+        <a href="#" class="resource-item"><h4>R for Statistical Computing</h4><p>Free software environment for statistical computing and graphics used in epidemiology.</p><span class="resource-type type-link">🔗 Software</span></a>
+        <a href="#" class="resource-item"><h4>The Lancet Podcast</h4><p>Weekly discussions of new research, perspectives, and public health issues from the editors.</p><span class="resource-type type-video">▶ Podcast</span></a>
+        <a href="#" class="resource-item"><h4>Coursera Research Methods Specialisation</h4><p>Multi-course series covering qualitative, quantitative, and mixed-methods research design.</p><span class="resource-type type-video">▶ Course</span></a>
+        <a href="#" class="resource-item"><h4>GRADE Evidence Assessment Framework</h4><p>Guidelines for grading evidence in systematic reviews and health guideline development.</p><span class="resource-type type-pdf">📄 Framework</span></a>
+        <a href="#" class="resource-item"><h4>Mendeley Desktop</h4><p>Reference and PDF management tool with social networking features for researchers.</p><span class="resource-type type-link">🔗 Tool</span></a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-name">Dr. Your Name</div>
+        <p>Researcher · Educator · Public Health Expert</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://linkedin.com" target="_blank" class="social-icon linkedin" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://researchgate.net" target="_blank" class="social-icon researchgate" title="ResearchGate">
+          <svg viewBox="0 0 24 24" fill="white"><text y="18" font-size="14" font-weight="bold" font-family="serif">RG</text></svg>
+        </a>
+        <a href="https://scholar.google.com" target="_blank" class="social-icon scholar" title="Google Scholar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 3L1 9l11 6 9-4.91V17M1 9v7"/><path d="M5 13.18v4L12 21l7-3.82v-4"/></svg>
+        </a>
+      </div>
+      <div class="footer-right"><p>© 2026 Dr. Your Name</p></div>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════════ CONTACT PAGE ══════════════════ -->
+<div id="page-contact" class="page">
+  <header>
+    <div class="header-inner">
+      <div class="logo" onclick="showPage('home')">
+        <span class="logo-name">Dr. Your Name</span>
+        <span class="logo-title">Researcher · Academic · Public Health Expert</span>
+      </div>
+      <nav>
+        <a href="#" onclick="showPage('home'); return false;">Home</a>
+        <a href="#" onclick="showPage('about'); return false;">About</a>
+        <a href="#" onclick="showPage('projects'); return false;">Projects</a>
+        <a href="#" onclick="showPage('resources'); return false;">Resources</a>
+        <a href="#" class="active" onclick="showPage('contact'); return false;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="contact-hero">
+    <div class="container">
+      <p class="section-label">Get In Touch</p>
+      <h1 class="section-title" style="font-size:3rem;">Contact Me</h1>
+      <p class="section-sub">Whether for research collaboration, academic enquiries, speaking engagements, or general correspondence — I'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- CONTACT DETAILS -->
+        <div class="contact-details-card">
+          <p class="section-label">Contact Details</p>
+          <h2 class="section-title" style="color:white;font-size:1.8rem;">Reach Out</h2>
+          <div class="contact-list">
+            <div class="contact-item">
+              <div class="contact-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div class="contact-item-info">
+                <label>Email</label>
+                <span>yourname@university.edu</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 18v2z"/></svg>
+              </div>
+              <div class="contact-item-info">
+                <label>Phone</label>
+                <span>+1 (000) 000-0000</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div class="contact-item-info">
+                <label>Office</label>
+                <span>Department of Public Health, Room 302<br>University Name, City, Country</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              </div>
+              <div class="contact-item-info">
+                <label>Office Hours</label>
+                <span>Tuesday &amp; Thursday, 2:00 – 4:00 PM</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-socials-row">
+            <a href="https://linkedin.com" target="_blank" class="contact-social">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://researchgate.net" target="_blank" class="contact-social">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><text y="17" font-size="13" font-weight="bold" font-family="serif">RG</text></svg>
+              ResearchGate
+            </a>
+            <a href="https://scholar.google.com" target="_blank" class="contact-social">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 3L1 9l11 6 9-4.91V17M1 9v7"/><path d="M5 13.18v4L12 21l7-3.82v-4"/></svg>
+              Scholar
+            </a>
+          </div>
+        </div>
+
+        <!-- CONTACT FORM -->
+        <div class="contact-form-card">
+          <p class="section-label">Send a Message</p>
+          <h2 class="section-title" style="font-size:1.8rem;">Contact Form</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="John">
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Doe">
+            </div>
+          </div>
+          <div class="form-group" style="margin-top:1.25rem;">
+            <label>Email Address</label>
+            <input type="email" placeholder="john.doe@example.com">
+          </div>
+          <div class="form-group" style="margin-top:1.25rem;">
+            <label>Affiliation / Organisation</label>
+            <input type="text" placeholder="University / Organisation name">
+          </div>
+          <div class="form-group" style="margin-top:1.25rem;">
+            <label>Subject</label>
+            <select>
+              <option value="">Select a subject…</option>
+              <option>Research Collaboration</option>
+              <option>Academic Enquiry</option>
+              <option>Speaking Engagement</option>
+              <option>Student / Mentorship</option>
+              <option>Media / Press</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-top:1.25rem;">
+            <label>Message</label>
+            <textarea placeholder="Please describe your enquiry, collaboration proposal, or message in detail…"></textarea>
+          </div>
+          <button class="form-submit" onclick="handleFormSubmit(this)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Send Message
+          </button>
+        </div>
+      </div>
+
+      <!-- MAP PLACEHOLDER -->
+      <div class="map-placeholder">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span style="font-size:0.85rem;">Department of Public Health, University Name — Replace with embedded map</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-name">Dr. Your Name</div>
+        <p>Researcher · Educator · Public Health Expert</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://linkedin.com" target="_blank" class="social-icon linkedin" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://researchgate.net" target="_blank" class="social-icon researchgate" title="ResearchGate">
+          <svg viewBox="0 0 24 24" fill="white"><text y="18" font-size="14" font-weight="bold" font-family="serif">RG</text></svg>
+        </a>
+        <a href="https://scholar.google.com" target="_blank" class="social-icon scholar" title="Google Scholar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 3L1 9l11 6 9-4.91V17M1 9v7"/><path d="M5 13.18v4L12 21l7-3.82v-4"/></svg>
+        </a>
+      </div>
+      <div class="footer-right"><p>© 2026 Dr. Your Name</p></div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  function showPage(name) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById('page-' + name).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function handleFormSubmit(btn) {
+    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Message Sent!';
+    btn.style.background = '#059669';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Message';
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 3000);
+  }
+</script>
+</body>
+</html>

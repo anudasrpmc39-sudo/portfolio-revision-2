@@ -1,124 +1,145 @@
 <!DOCTYPE html>
-<!-- Header with navigation updates -->
-<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dr. Anupom Das | Academic Portfolio</title>
-  <meta name="description" content="Academic portfolio of Dr. Anupom Das - Medical Doctor, Clinical Researcher, Health Informatics Scholar, and Public Health & Epidemiology Researcher." />
+
+  <meta name="description" content="Academic portfolio of Dr. Anupom Das - Medical Doctor, Clinical Researcher, Health Informatics Scholar." />
+
+  <!-- CSS -->
+
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Icons -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+
 <body class="page-home">
-<section> 
-  <!-- Header -->
-  <header class="header">
-    <div class="container header-inner">
-      <div class="brand">
-        <h1>Dr. Anupom Das</h1>
-        <p class="subtitle"
-           data-en=" Bridging Data Science in Clinical Medicine, and Public Health "
-           data-bn="চিকিৎসক | হেলথ ইনফরমেটিক্স বিশেষজ্ঞ | এপিডেমিওলজি ও জনস্বাস্থ্য গবেষক">
-          Bridging Data Science in Clinical Medicine, and Public Health
-        </p>
-      </div>
 
-      <div class="controls">
-        <div class="search-box">
-          <input type="text" id="searchBox" placeholder="Search the website..." />
-        </div>
-        <button id="langBtn" class="icon-btn">🌐 EN / বাংলা</button>
-      </div>
+<!-- ================= HEADER ================= -->
 
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="profile.html"> Profile </a>
-        <a href="projects.html"> Projects </a>
-        <a href="notes.html"> Resources </a>
-        <a href="contact.html">Contact</a>
-      </nav>
+<header class="header">
+  <div class="container header-inner">
+
+```
+<div class="brand">
+  <h1>Dr. Anupom Das</h1>
+  <p class="subtitle">
+    Bridging Data Science in Clinical Medicine, and Public Health
+  </p>
+</div>
+
+<div class="controls">
+  <div class="search-box">
+    <input type="text" id="searchBox" placeholder="Search the website..." />
+  </div>
+  <button id="langBtn" class="icon-btn">🌐 EN / বাংলা</button>
+</div>
+
+<nav class="nav">
+  <a href="index.html">Home</a>
+  <a href="profile.html">Profile</a>
+  <a href="projects.html">Projects</a>
+  <a href="notes.html">Resources</a>
+  <a href="contact.html">Contact</a>
+</nav>
+```
+
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+  <div class="container hero-grid">
+
+```
+<!-- LEFT -->
+<div class="hero-left">
+
+  <span class="badge">
+    Academic & Research Portfolio
+  </span>
+
+  <h2>
+    Physician–Researcher in Health Informatics, Epidemiology and Public Health
+  </h2>
+
+  <p>
+    I am a medical doctor, certified field epidemiologist, and health informatics researcher.
+    My work focuses on integrating real-world health data, digital systems, and epidemiology
+    to improve disease surveillance and healthcare decision-making.
+  </p>
+
+  <p>
+    Currently pursuing a Master’s in Health Informatics at Karolinska Institutet and Stockholm University,
+    focusing on health data systems and digital infrastructure.
+  </p>
+
+  <div class="hero-buttons">
+    <a href="projects.html" class="icon-btn">Projects</a>
+    <a href="notes.html" class="icon-btn">Resources</a>
+    <a href="CV.pdf" class="btn primary-btn" download>📄 Download CV</a>
+    <a href="contact.html" class="icon-btn">Contact</a>
+  </div>
+
+  <!-- METRICS -->
+  <div class="hero-metrics">
+
+    <div class="metric-box">
+      <h3>7+</h3>
+      <p>Publications</p>
     </div>
-  </header>
 
-  
-  <!-- Hero -->
-
-  <section id="home" class="hero searchable">
-    <div class="container hero-grid">
-      <div class="hero-left">
-        <span class="badge"
-              data-en="Academic & Research Portfolio"
-              data-bn="একাডেমিক ও গবেষণা পোর্টফোলিও">
-          Academic & Research Portfolio
-        </span>
-
-        <h2
-          data-en="<h2> Physician–Researcher in Health Informatics, Epidemiology and Public Health </h2>"
-          data-bn="হেলথ ইনফরমেটিক্স গবেষক, এপিডেমিওলজিস্ট ও চিকিৎসক  ">
-          Physician–Researcher in Health Informatics, Epidemiology and Public Health
-        </h2>
-
-        <p
-          data-en= <p> "I am a medical doctor by training, certified field epidemiologist and health informatics researcher. My work focuses on the integration of real-world health data, digital health systems, and epidemiological methods to strengthen disease surveillance and inform evidence-based healthcare decision-making, particularly in resource-constrained settings.</p> 
-          <p> Currently, I am pursuing a Master’s in Health Informatics at Karolinska Institutet and Stockholm University, with a focus on health data systems, digital infrastructure, and applied research. </p> 
-                </p>
-
-        <div class="hero-buttons">
-         
-          <a href="#research" class="icon-btn"> Research </a>
-          <a href="#projects" class="icon-btn"> View Projects </a>
-          <a href="CV.pdf" class="btn primary-btn" download>📄 Download CV </a>
-          <a href="#contact" class="icon-btn"> Contact </a>
-        </div>
-
-        <div class="hero-metrics">
-          <div class="metric-box">
-            <h3> 7+ </h3>
-            <p data-en="Peer-Reviewed Publications" data-bn="প্রকাশনা">Publications</p>
-          </div>
-          <div class="metric-box">
-            <h3> 8+ </h3>
-            <p data-en="Years Clinical & Public Health Experience" data-bn="বছরের অভিজ্ঞতা">Years Experience</p>
-          </div>
-          <div class="metric-box">
-            <h3>3</h3>
-            <p data-en="Core Research Domains" data-bn="মূল গবেষণা ক্ষেত্র">Core Research Domains</p>
-          </div>
-           <div class="metric-box">
-            <h3>5+ years </h3>
-            <p data-en="Experience with National Health Data Systems (DHIS2)" data-bn="Experience with National Health Data Systems (DHIS2)">Core Research Domains</p>
-          </div>
-        </div>
-      </div>
-
-  <div class="hero-card">
-        <h3 data-en="Academic Profile Highlights" data-bn="একাডেমিক প্রোফাইলের মূল দিক">
-          Academic Profile Highlights
-        </h3>
-        <ul>
-          <li data-en="Health Informatics for strengthening Digital Health Systems" data-bn="হেলথ ইনফরমেটিক্স ও ডিজিটাল হেলথ সিস্টেম">Health Informatics & Digital Health Systems</li>
-          <li data-en="Evidence Generation and Implementation of Data-Driven Public Health Interventions" data-bn="ক্লিনিক্যাল ও জনসংখ্যাভিত্তিক স্বাস্থ্য গবেষণা">Clinical and Population Health Research</li>
-          <li data-en="Application of Machine Learning in Medicine, Epidemiology and Population Health" data-bn="ক্লিনিক্যাল মেডিসিন ও জনস্বাস্থ্য">Clinical Medicine & Public Health Practice</li>
-          <li data-en=" Artificial Intellegence in Healthcare and Research " data-bn="ফিল্ড এপিডেমিওলজি ও রোগ নজরদারি">Field Epidemiology & Disease Surveillance</li>
-          <li data-en=" Developing Scalable Tools for Practical Action in Health and Research " data-bn="মেডিকেল শিক্ষা ও সক্ষমতা উন্নয়ন">Medical Education & Capacity Building</li>
-        </ul>
-      </div>
+    <div class="metric-box">
+      <h3>8+</h3>
+      <p>Years Experience</p>
     </div>
-  </section>
 
-  </section>
-  
-
-<!-- THEN your footer -->
-<footer>
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>© 2026 Dr. Anupom Das | Academic Portfolio | Health Informatics • Public Health • Epidemiology</p>
+    <div class="metric-box">
+      <h3>3</h3>
+      <p>Core Research Domains</p>
     </div>
-  </footer>
 
-  <script src="script.js"></script>
+    <div class="metric-box">
+      <h3>5+</h3>
+      <p>DHIS2 Experience</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- RIGHT CARD -->
+<div class="hero-card">
+  <h3>Academic Profile Highlights</h3>
+
+  <ul>
+    <li>Health Informatics & Digital Health Systems</li>
+    <li>Data-Driven Public Health Interventions</li>
+    <li>Machine Learning in Medicine & Epidemiology</li>
+    <li>Field Epidemiology & Disease Surveillance</li>
+    <li>Medical Education & Capacity Building</li>
+  </ul>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2026 Dr. Anupom Das | Health Informatics • Public Health • Epidemiology</p>
+  </div>
+</footer>
+
+<!-- JS -->
+
+<script src="script.js"></script>
+
 </body>
 </html>

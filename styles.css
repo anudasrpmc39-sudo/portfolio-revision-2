@@ -1485,3 +1485,11 @@ footer {
   .form-row        { grid-template-columns: 1fr; }
   nav a            { font-size: 0.72rem; padding: 0.4rem 0.6rem; }
 }
+
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}

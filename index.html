@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Anupom Das | Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════
+     HOME PAGE
+══════════════════════════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <header>
+    <div class="header-inner">
+      <div class="logo" onclick="showPage('home')">
+        <span class="logo-name">Dr. Anupom Das</span>
+        <span class="logo-title"> Bridging Informatics in Medicine </span>
+      </div>
+      <nav>
+        <a href="#" class="active"         onclick="showPage('home');      return false;">Home</a>
+        <a href="#"                        onclick="showPage('about');     return false;">About</a>
+        <a href="#"                        onclick="showPage('projects');  return false;">Projects</a>
+        <a href="#"                        onclick="showPage('resources'); return false;">Resources</a>
+        <a href="#"                        onclick="showPage('contact');   return false;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ── BANNER ── -->
+  <section class="home-banner">
+    <div class="banner-inner">
+      <div class="banner-content">
+        <p class="banner-kicker"> Public Health Researcher &amp; Health Informatician </p>
+        <h1 class="banner-name">Dr. <span> Anupom Das </span></h1>
+        <p class="banner-role"> MBBS(BD) · FETP-intermediate (US CDC) · M.Med.Sc. (Karolinska) </p>
+        <p class="banner-desc">
+          Advancing evidence-based solutions at the intersection of medicine, information technology, and public health.
+          Committed to translating rigorous research into actionable solutions, equitable policy and meaningful impact  in health for communities worldwide.
+        </p>
+        <div class="banner-tags">
+          <span class="tag">💻 Health Informatics</span>
+          <span class="tag">🔬 Medicine</span>
+          <span class="tag">🌍 Public Health</span>
+          <span class="tag">📊 Data Mining </span>
+        </div>
+        <div class="banner-ctas">
+          <button class="btn-primary" onclick="showPage('about')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/>
+            </svg>
+
+            About Me
+          </button>
+          <button class="btn-outline" onclick="showPage('projects')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 7h18M3 12h18M3 17h18"/>
+            </svg>
+            My Projects
+          </button>
+        </div>
+      </div>
+
+      <!-- Profile Photo -->
+      <div class="banner-photo-wrap">
+        <div class=" ">
+         <img src="photo.jpg" alt="Dr. Anupom Das">
+          <!-- REPLACE the div below with: <img src="your-photo.jpg" alt="Dr. Your Name"> -->
+          <div class="photo-placeholder">
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#2457a4" stroke-width="1.5">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+            <span>Replace with your profile photo</span>
+          </div>
+        </div>
+        <div class="photo-badge">
+          <div class="photo-badge-dot"></div>
+          <span>Open to Collaboration</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── STATS STRIP ── -->
+  <section class="stats-section">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-num">8+</span>
+        <span class="stat-label">Years Experience</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">7 </span>
+        <span class="stat-label">Publications</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">3 </span>
+        <span class="stat-label">Active Projects</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">150+</span>
+        <span class="stat-label">Citations</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WORKS & EXPERTISE ── -->
+  <section class="section bg-white">
+    <div class="container">
+      <p class="section-label"> Expertise &amp; Experineces </p>
+      <h2 class="section-title"> Expertise, Experience &amp; Research </h2>
+      <p class="section-sub"> Bridging clinical knowledge, data science, and public health policy to drive systemic change.</p>
+      <p class="section-sub"> Translator for bringing real-life solution from the treassure of knowledge</p>
+
+      
+      <!-- Work Cards -->
+      <div class="works-grid" style="margin-top:3rem;">
+        <div class="work-card">
+          <div class="work-card-icon">🧬</div>
+          <div class="work-card-body">
+            <h3 class="work-card-title">Epidemiological Research</h3>
+            <p class="work-card-text">Designing and executing population-level studies on infectious diseases, chronic conditions, and social determinants of health.</p>
+          </div>
+        </div>
+
+        <div class="work-card">
+          <div class="work-card-icon">💻</div>
+          <div class="work-card-body">
+            <h3 class="work-card-title">Health Informatics</h3>
+            <p class="work-card-text">Developing digital health systems, clinical decision support tools, and health data infrastructure for low-resource settings.</p>
+          </div>
+        </div>
+
+        <div class="work-card">
+          <div class="work-card-icon">📋</div>
+          <div class="work-card-body">
+            <h3 class="work-card-title">Health Policy &amp; Advocacy</h3>
+            <p class="work-card-text">Translating research into evidence-based policies at national and international levels in collaboration with health ministries.</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card-icon">📚</div>
+          <div class="work-card-body">
+            <h3 class="work-card-title">Academic Teaching</h3>
+            <p class="work-card-text">Course development and delivery in public health, epidemiology, research methodology, and health informatics.</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card-icon">📊</div>
+          <div class="work-card-body">
+            <h3 class="work-card-title">Biostatistics &amp; Analysis</h3>
+            <p class="work-card-text">Advanced statistical modelling, spatial epidemiology, machine learning applications in health data science.</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-card-icon">🤝</div>
+          <div class="work-card-body">
+            <h3 class="work-card-title">Capacity Building</h3>
+            <p class="work-card-text">Training health professionals in research methods, data collection tools, and evidence-based practice across the region.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── OPEN COLLABORATION CALL ── -->
+  <section class="collab-section">
+    <div class="collab-inner">
+      <p class="section-label">Open Call</p>
+      <h2 class="section-title" style="font-size:2.6rem;">Research Collaboration</h2>
+      <p class="section-sub">I welcome interdisciplinary collaborations with researchers, institutions, and organisations aligned with advancing global health outcomes. Let's build impactful science together.</p>
+      <div class="collab-areas">
+        <span class="collab-tag">🔬 Epidemiology Studies</span>
+        <span class="collab-tag">💻 Digital Health Systems</span>
+        <span class="collab-tag">🌍 Global Health Interventions</span>
+        <span class="collab-tag">📊 Data Analytics &amp; AI</span>
+        <span class="collab-tag">📖 Systematic Reviews</span>
+        <span class="collab-tag">🏥 Health Systems Research</span>
+        <span class="collab-tag">🎓 Academic Exchange</span>
+      </div>
+      <button class="btn-primary" onclick="showPage('contact')" style="margin:0 auto;display:inline-flex;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/>
+        </svg>
+        Get in Touch
+      </button>
+    </div>
+  </section>
+
+  <!-- Infographics -->
+      <div class="infographic-row">
+        <div class="infographic-item">
+          <div class="infographic-circle">🔬</div>
+          <div class="infographic-num">15+</div>
+          <div class="infographic-label">Research Projects</div>
+          <div class="infographic-desc">Epidemiology, infectious disease &amp; NCD studies</div>
+        </div>
+        <div class="infographic-item">
+          <div class="infographic-circle">🏥</div>
+          <div class="infographic-num">8+</div>
+          <div class="infographic-label">Institutions</div>
+          <div class="infographic-desc">Academic, clinical &amp; government partnerships</div>
+        </div>
+        <div class="infographic-item">
+          <div class="infographic-circle">🌐</div>
+          <div class="infographic-num">5</div>
+          <div class="infographic-label">Countries</div>
+          <div class="infographic-desc">Multi-country global health initiatives</div>
+        </div>
+        <div class="infographic-item">
+          <div class="infographic-circle">👩‍🎓</div>
+          <div class="infographic-num">120+</div>
+          <div class="infographic-label">Students Mentored</div>
+          <div class="infographic-desc">Graduate &amp; postgraduate mentorship</div>
+        </div>
+      </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-name">Dr. Anupom Das</div>
+        <p>Researcher · Educator · Public Health Expert</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://linkedin.com" target="_blank" class="social-icon linkedin" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/>
+            <rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+        <a href="https://researchgate.net" target="_blank" class="social-icon researchgate" title="ResearchGate">
+          <svg viewBox="0 0 24 24" fill="white"><text y="18" font-size="14" font-weight="bold" font-family="serif">RG</text></svg>
+        </a>
+        <a href="https://scholar.google.com" target="_blank" class="social-icon scholar" title="Google Scholar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <path d="M12 3L1 9l11 6 9-4.91V17M1 9v7"/>
+            <path d="M5 13.18v4L12 21l7-3.82v-4"/>
+          </svg>
+        </a>
+      </div>
+      <div class="footer-right">
+        <p>© 2026 Dr. Anupom Das</p>
+        <p style="margin-top:0.25rem;font-size:0.7rem;">All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     ABOUT PAGE
+══════════════════════════════════════════════════════ -->
+<div id="page-about" class="page">
+
+  <header>
+    <div class="header-inner">
+      <div class="logo" onclick="showPage('home')">
+        <span class="logo-name"> Dr. Anupom Das</span>
+        <span class="logo-title"> Researcher enthusiast in Public Health </span>
+      </div>
+      <nav>
+        <a href="#"                        onclick="showPage('home');      return false;">Home</a>
+        <a href="#" class="active"         onclick="showPage('about');     return false;">About</a>
+        <a href="#"                        onclick="showPage('projects');  return false;">Projects</a>
+        <a href="#"                        onclick="showPage('resources'); return false;">Resources</a>
+        <a href="#"                        onclick="showPage('contact');   return false;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ABOUT HERO -->
+  <section class="about-header-section">
+    <div class="container">
+      <p class="section-label">Professional Profile</p>
+      <h1 class="section-title" style="font-size:3rem;">About Me</h1>
+      <p class="section-sub">Academic researcher, educator and public health professional with over a decade of experience driving impactful health solutions.</p>
+    </div>
+  </section>
+
+  <!-- CAREER OBJECTIVE & SUMMARY -->
+  <section class="section bg-white">
+    <div class="container">
+      <div class="career-grid">
+        <div class="objective-card">
+          <p class="section-label">Direction</p>
+          <h2 class="section-title" style="font-size:1.8rem;color:white;">Career Objective</h2>
+          <p class="objective-text">To leverage extensive expertise in epidemiology, health informatics, and public health research to develop innovative, evidence-based solutions that address complex health challenges, improve health systems, and advance health equity in low- and middle-income countries.</p>
+          <p class="objective-text" style="margin-top:1rem;">Committed to collaborative, interdisciplinary approaches that bridge the gap between research, policy, and practice for sustainable health improvements at scale.</p>
+        </div>
+        <div class="summary-card">
+          <p class="section-label">Overview</p>
+          <h2 class="section-title" style="font-size:1.8rem;">Career Summary</h2>
+          <p class="summary-text">A highly accomplished public health researcher and academic with over 12 years of experience spanning clinical medicine, epidemiology, health informatics, and global health. Proven track record of leading high-impact research projects, securing competitive funding, and publishing in peer-reviewed journals.</p>
+          <p class="summary-text" style="margin-top:0.75rem;">Expertise in designing mixed-methods studies, analysing complex health data, and translating findings into policy-relevant recommendations. Committed to mentoring emerging researchers and building institutional research capacity.</p>
+          <div style="display:flex;gap:1rem;margin-top:1.5rem;flex-wrap:wrap;">
+            <div style="text-align:center;padding:0.75rem 1.25rem;background:var(--pale);border-radius:10px;">
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--navy);">MBBS</div>
+              <div style="font-size:0.7rem;color:var(--text-light);text-transform:uppercase;letter-spacing:0.05em;">Medical Degree</div>
+            </div>
+            <div style="text-align:center;padding:0.75rem 1.25rem;background:var(--pale);border-radius:10px;">
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--navy);">FETP-intermediate</div>
+              <div style="font-size:0.7rem;color:var(--text-light);text-transform:uppercase;letter-spacing:0.05em;">Fellowship Training in Field Epidemiology</div>
+            </div>
+            <div style="text-align:center;padding:0.75rem 1.25rem;background:var(--pale);border-radius:10px;">
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:700;color:var(--navy);">M.Med.Sc </div>
+              <div style="font-size:0.7rem;color:var(--text-light);text-transform:uppercase;letter-spacing:0.05em;">Health Informatics- Karolinska Institutet </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK EXPERIENCE -->
+  <section class="section bg-light">
+    <div class="container">
+      <p class="section-label">Career Journey</p>
+      <h2 class="section-title">Work Experience</h2>
+      <p class="section-sub">A progression of roles spanning academia, research institutions, and public health organisations.</p>
+      <div class="timeline" style="margin-top:3rem;">
+        <div class="timeline-item">
+          <p class="timeline-date">2022 — 2025</p>
+          <h3 class="timeline-title">Medical Officer &amp; Field Epidemiologist </h3>
+          <p class="timeline-org"> Ministry of the Health and Family Welfare, Government of Bangladesh </p>
+          <p class="timeline-desc">Leading a research group focused on digital epidemiology and health systems strengthening. Overseeing 5 PhD students and managing 3 active research grants.</p>
+        </div>
+        <div class="timeline-item">
+          <p class="timeline-date">2021 — 2022</p>
+          <h3 class="timeline-title">Medical Office (Management Information System) </h3>
+          <p class="timeline-org"> Ministry of the Health and Family Welfare, Government of Bangladesh </p>
+          <p class="timeline-desc">Led cross-national research projects on infectious disease surveillance and health system resilience. Published 14 peer-reviewed papers. Developed a community-based health monitoring platform across 3 countries.</p>
+        </div>
+        <div class="timeline-item">
+          <p class="timeline-date"> 2020 — 2021 </p>
+          <h3 class="timeline-title">Medical Officer (COVID-19) </h3>
+          <p class="timeline-org"> Ministry of the Health and Family Welfare, Government of Bangladesh </p>
+          <p class="timeline-desc">Spearheaded implementation of the national electronic health records system serving 200+ health facilities. Contributed to national disease surveillance protocols.</p>
+        </div>
+        <div class="timeline-item">
+          <p class="timeline-date">2018 — 2020</p>
+          <h3 class="timeline-title"> Research Medical Officer (NCD Surveillance) </h3>
+          <p class="timeline-org"> James P Grant School of Public Health, BRAC University </p>
+          <p class="timeline-desc">Provided clinical care in internal medicine and preventive health. Initiated data quality improvement initiatives and participated in public health outbreak responses.</p>
+        </div>
+        <div class="timeline-item">
+          <p class="timeline-date">2018 — 2019</p>
+          <h3 class="timeline-title"> Research Associate (Iron-fortified Lentil Clinical Trial) </h3>
+          <p class="timeline-org"> BRAC Research </p>
+          <p class="timeline-desc">Provided clinical care in internal medicine and preventive health. Initiated data quality improvement initiatives and participated in public health outbreak responses.</p>
+        </div>
+        <div class="timeline-item">
+          <p class="timeline-date">2017 — 2018</p>
+          <h3 class="timeline-title"> Research Physician (JiVitA Micronutrient Supplementation Project) </h3>
+          <p class="timeline-org"> JiVitA Project, Johns Hopkins University </p>
+          <p class="timeline-desc">Provided clinical care in internal medicine and preventive health. Initiated data quality improvement initiatives and participated in public health outbreak responses.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="section bg-white">
+    <div class="container">
+      <p class="section-label">Academic Formation</p>
+      <h2 class="section-title">Education</h2>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <div class="edu-degree"> M.Med.Sc in Health Informatics</div>
+          <div class="edu-institution"> Karolinska Instutet, Sweden & Stockholm Universitiet, Sweden </div>
+          <div class="edu-year">2025 – 2027</div>
+          <p style="font-size:0.8rem;color:var(--text-light);margin-top:0.5rem;line-height:1.6;">Thesis: "Digital Surveillance Systems and Outbreak Response Capacity in Low-Income Settings"</p>
+        </div>
+        <div class="edu-card">
+          <div class="edu-degree"> Field Epidemiology Training Program (FETP)- Intermediate </div>
+          <div class="edu-institution"> Institute of Epidemiology, Disese Control and Research (IEDCR), Bangladesh </div>
+          <div class="edu-year">2022 – 2023</div>
+          <p style="font-size:0.8rem;color:var(--text-light);margin-top:0.5rem;line-height:1.6;">Specialisation in Health Informatics and Epidemiology. Graduated with Distinction.</p>
+        </div>
+        <div class="edu-card">
+          <div class="edu-degree"> MBBS (Bachelor of Medicine, Bachelor of Surgery)</div>
+          <div class="edu-institution"> Rangpur Medical College, University of Rajshahi, Bangladesh </div>
+          <div class="edu-year">2010 – 2015</div>
+          <p style="font-size:0.8rem;color:var(--text-light);margin-top:0.5rem;line-height:1.6;">Clinical medicine with rotations in internal medicine, surgery, paediatrics, and community health.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAININGS -->
+  <section class="section bg-light">
+    <div class="container">
+      <p class="section-label">Professional Development</p>
+      <h2 class="section-title">Trainings &amp; Certifications</h2>
+      <div class="trainings-grid">
+        <div class="training-card"><div class="training-icon">📊</div><div class="training-info"><h4>Advanced Biostatistics</h4><p>Johns Hopkins University · 2022</p></div></div>
+        <div class="training-card"><div class="training-icon">🤖</div><div class="training-info"><h4>Machine Learning in Health</h4><p>Stanford Online · 2023</p></div></div>
+        <div class="training-card"><div class="training-icon">📋</div><div class="training-info"><h4>Systematic Reviews &amp; Meta-Analysis</h4><p>Cochrane Collaboration · 2021</p></div></div>
+        <div class="training-card"><div class="training-icon">🌐</div><div class="training-info"><h4>Global Health Leadership</h4><p>WHO Leadership Academy · 2020</p></div></div>
+        <div class="training-card"><div class="training-icon">💻</div><div class="training-info"><h4>Health Informatics Implementation</h4><p>HIMSS Certification · 2019</p></div></div>
+        <div class="training-card"><div class="training-icon">🔬</div><div class="training-info"><h4>Clinical Research Methodology</h4><p>NIH Training Program · 2018</p></div></div>
+        <div class="training-card"><div class="training-icon">📖</div><div class="training-info"><h4>Scientific Writing &amp; Publication</h4><p>Nature Masterclasses · 2022</p></div></div>
+        <div class="training-card"><div class="training-icon">🏛️</div><div class="training-info"><h4>Research Ethics &amp; Integrity</h4><p>CITI Program · 2021</p></div></div>
+        <div class="training-card"><div class="training-icon">📡</div><div class="training-info"><h4>Geographic Information Systems</h4><p>ESRI Training · 2020</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section class="section bg-white">
+    <div class="container">
+      <p class="section-label">Scholarly Output</p>
+      <h2 class="section-title">Selected Publications</h2>
+      <p class="section-sub">A curated selection from 7+ peer-reviewed publications in international journals.</p>
+      <div class="pub-list">
+        <div class="pub-item">
+          <div class="pub-num">01</div>
+          <div class="pub-content">
+            <h4>Digital Surveillance Systems and Epidemic Response Capacity in Sub-Saharan Africa: A Systematic Review</h4>
+            <p class="pub-meta">Your Name, Co-Author A, Co-Author B · 2024</p>
+            <p class="pub-journal">The Lancet Digital Health · DOI: 10.xxxx/xxxxx</p>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-num">02</div>
+          <div class="pub-content">
+            <h4>Artificial Intelligence in Low-Resource Health Settings: Opportunities, Challenges and Ethical Considerations</h4>
+            <p class="pub-meta">Your Name, Co-Author C · 2023</p>
+            <p class="pub-journal">PLOS Medicine · DOI: 10.xxxx/xxxxx</p>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-num">03</div>
+          <div class="pub-content">
+            <h4>Determinants of Health Information System Adoption in Public Hospitals: A Mixed-Methods Study</h4>
+            <p class="pub-meta">Your Name, Co-Author D, Co-Author E · 2022</p>
+            <p class="pub-journal">International Journal of Medical Informatics · DOI: 10.xxxx/xxxxx</p>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-num">04</div>
+          <div class="pub-content">
+            <h4>Community-Based Participatory Research for NCD Prevention: Evidence from a Multi-Site Trial</h4>
+            <p class="pub-meta">Your Name et al. · 2021</p>
+            <p class="pub-journal">Bulletin of the World Health Organization · DOI: 10.xxxx/xxxxx</p>
+          </div>
+        </div>
+        <div class="pub-item">
+          <div class="pub-num">05</div>
+          <div class="pub-content">
+            <h4>Epidemiology of Antimicrobial Resistance in Community Settings: A Population-Based Cohort Study</h4>
+            <p class="pub-meta">Your Name, Co-Author F · 2020</p>
+            <p class="pub-journal">Emerging Infectious Diseases · DOI: 10.xxxx/xxxxx</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-name">Dr. Anupom Das </div>
+        <p>Researcher · Educator · Public Health Expert</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://linkedin.com" target="_blank" class="social-icon linkedin" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://researchgate.net" target="_blank" class="social-icon researchgate" title="ResearchGate">
+          <svg viewBox="0 0 24 24" fill="white"><text y="18" font-size="14" font-weight="bold" font-family="serif">RG</text></svg>
+        </a>
+        <a href="https://scholar.google.com" target="_blank" class="social-icon scholar" title="Google Scholar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 3L1 9l11 6 9-4.91V17M1 9v7"/><path d="M5 13.18v4L12 21l7-3.82v-4"/></svg>
+        </a>
+      </div>
+      <div class="footer-right"><p>© 2026 Dr. Anupom Das </p></div>
+    </div>
+  </footer>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     PROJECTS PAGE
+══════════════════════════════════════════════════════ -->
+<div id="page-projects" class="page">
+
+  <header>
+    <div class="header-inner">
+      <div class="logo" onclick="showPage('home')">
+        <span class="logo-name">Dr. Anupom Das </span>
+        <span class="logo-title"> Bridging technical solution in healthcare, medicine and reserach </span>
+      </div>
+      <nav>
+        <a href="#"                        onclick="showPage('home');      return false;">Home</a>
+        <a href="#"                        onclick="showPage('about');     return false;">About</a>
+        <a href="#" class="active"         onclick="showPage('projects');  return false;">Projects</a>
+        <a href="#"                        onclick="showPage('resources'); return false;">Resources</a>
+        <a href="#"                        onclick="showPage('contact');   return false;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="projects-hero">
+    <div class="container">
+      <p class="section-label">Active Research</p>
+      <h1 class="section-title" style="color:white;font-size:3rem;">Current Projects</h1>
+      <p class="section-sub">Ongoing research initiatives spanning epidemiology, health systems, and digital health innovation.</p>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container">
+      <p class="section-label">Research Portfolio</p>
+      <h2 class="section-title">My Current Projects</h2>
+      <p class="section-sub">Each project addresses a critical gap in public health knowledge with robust methodology and multi-stakeholder partnerships.</p>
+
+      <div style="margin-top:3rem;">
+
+        <div class="project-card-full">
+          <div class="project-card-header">
+            <div class="project-num">01</div>
+            <div class="project-header-info">
+              <h3>AI-Powered Disease Surveillance System for Low-Resource Settings</h3>
+              <span class="project-status status-active">● Active</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <p>This project develops and validates a machine learning-driven disease surveillance platform for health facilities with limited digital infrastructure. The system integrates real-time data from community health workers, facility reports, and environmental sensors to enable early outbreak detection with a minimum 5-day advance warning.</p>
+            <div class="project-meta-row">
+              <div class="project-meta-item">📅 <strong>Duration:</strong> 2023 – 2026</div>
+              <div class="project-meta-item">💰 <strong>Funder:</strong> Wellcome Trust / NIH</div>
+              <div class="project-meta-item">🌍 <strong>Sites:</strong> 3 countries</div>
+            </div>
+            <a href="#" class="project-link">📄 Project Page</a>
+            <a href="#" class="project-link">📊 Data Dashboard</a>
+            <a href="#" class="project-link">📖 Publications</a>
+          </div>
+        </div>
+
+        <div class="project-card-full">
+          <div class="project-card-header">
+            <div class="project-num">02</div>
+            <div class="project-header-info">
+              <h3>Non-Communicable Disease Prevention Through Community Engagement</h3>
+              <span class="project-status status-ongoing">● Ongoing</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <p>A community-based participatory research project evaluating culturally-adapted health promotion interventions on NCD risk factors including hypertension, diabetes, and obesity. Uses a cluster-randomised controlled trial design across 24 communities with a 3-year follow-up.</p>
+            <div class="project-meta-row">
+              <div class="project-meta-item">📅 <strong>Duration:</strong> 2022 – 2025</div>
+              <div class="project-meta-item">💰 <strong>Funder:</strong> WHO / National Research Fund</div>
+              <div class="project-meta-item">👥 <strong>Participants:</strong> 4,800</div>
+            </div>
+            <a href="#" class="project-link">📄 Protocol Paper</a>
+            <a href="#" class="project-link">🗺️ Trial Registry</a>
+          </div>
+        </div>
+
+        <div class="project-card-full">
+          <div class="project-card-header">
+            <div class="project-num">03</div>
+            <div class="project-header-info">
+              <h3>Electronic Health Records Implementation &amp; Quality Improvement</h3>
+              <span class="project-status status-ongoing">● Ongoing</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <p>This implementation science project evaluates barriers, facilitators, and health outcomes associated with EHR adoption in public district hospitals. Using a mixed-methods approach, the research develops a practical implementation framework for national scale-up with focus on interoperability and data quality.</p>
+            <div class="project-meta-row">
+              <div class="project-meta-item">📅 <strong>Duration:</strong> 2024 – 2027</div>
+              <div class="project-meta-item">💰 <strong>Funder:</strong> Digital Health Initiative</div>
+              <div class="project-meta-item">🏥 <strong>Sites:</strong> 18 hospitals</div>
+            </div>
+            <a href="#" class="project-link">📄 Study Overview</a>
+            <a href="#" class="project-link">🔧 Open Toolkit</a>
+          </div>
+        </div>
+
+        <div class="project-card-full">
+          <div class="project-card-header">
+            <div class="project-num">04</div>
+            <div class="project-header-info">
+              <h3>Antimicrobial Resistance Epidemiology in Community Settings</h3>
+              <span class="project-status status-planning">⚙ Planning Phase</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <p>A prospective cohort study investigating the emergence, spread, and determinants of antimicrobial resistance in community settings. Leverages genomic surveillance, spatial epidemiology, and social network analysis to map transmission pathways and identify high-risk population clusters.</p>
+            <div class="project-meta-row">
+              <div class="project-meta-item">📅 <strong>Duration:</strong> 2025 – 2029</div>
+              <div class="project-meta-item">💰 <strong>Funder:</strong> Under review – UKRI</div>
+              <div class="project-meta-item">🔬 <strong>Approach:</strong> Genomic + Spatial</div>
+            </div>
+            <a href="#" class="project-link">📋 Concept Note</a>
+            <a href="#" class="project-link">🤝 Collaborate</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-name">Dr. Anupom Das </div>
+        <p>Researcher · Educator · Public Health Expert</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://linkedin.com" target="_blank" class="social-icon linkedin" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://researchgate.net" target="_blank" class="social-icon researchgate" title="ResearchGate">
+          <svg viewBox="0 0 24 24" fill="white"><text y="18" font-size="14" font-weight="bold" font-family="serif">RG</text></svg>
+        </a>
+        <a href="https://scholar.google.com" target="_blank" class="social-icon scholar" title="Google Scholar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 3L1 9l11 6 9-4.91V17M1 9v7"/><path d="M5 13.18v4L12 21l7-3.82v-4"/></svg>
+        </a>
+      </div>
+      <div class="footer-right"><p>© 2026 Dr. Anupom Das </p></div>
+    </div>
+  </footer>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     RESOURCES PAGE
+══════════════════════════════════════════════════════ -->
+<div id="page-resources" class="page">
+
+  <header>
+    <div class="header-inner">
+      <div class="logo" onclick="showPage('home')">
+        <span class="logo-name">Dr. Anupom Das </span>
+        <span class="logo-title"> Diversity- Unity- Universality </span>
+      </div>
+      <nav>
+        <a href="#"                        onclick="showPage('home');      return false;">Home</a>
+        <a href="#"                        onclick="showPage('about');     return false;">About</a>
+        <a href="#"                        onclick="showPage('projects');  return false;">Projects</a>
+        <a href="#" class="active"         onclick="showPage('resources'); return false;">Resources</a>
+        <a href="#"                        onclick="showPage('contact');   return false;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="resources-hero">
+    <div class="container">
+      <p class="section-label">Knowledge Hub</p>
+      <h1 class="section-title" style="color:white;font-size:3rem;">Resources</h1>
+      <p class="section-sub">Curated reading lists, tools, and references across public health, informatics, philosophy, literature, and beyond.</p>
+    </div>
+  </section>
+
+  <!-- PUBLIC HEALTH -->
+  <div class="resource-category">
+    <div class="container">
+      <div class="resource-cat-header">
+        <div class="resource-cat-icon" style="background:#dbeafe;">🏥</div>
+        <div>
+          <h2 class="resource-cat-title">Public Health</h2>
+          <p class="resource-cat-sub">Epidemiology, global health, policy, and prevention science resources</p>
+        </div>
+      </div>
+      <div class="resources-grid">
+        <a href="#" class="resource-item"><h4> Public Health Resource-1 </h4><p> Research Methods in Public Health (Updated Later).</p><span class="resource-type type-link">🔗 Resource-1 Link </span></a>
+        <a href="#" class="resource-item"><h4> Public Health Resource-2 </h4><p> You will find Project 2 resources here .</p><span class="resource-type type-link">🔗 Resource-2 Link </span></a>
+        <a href="#" class="resource-item"><h4> Public Health Resource-2 –  Project </h4><p> Project 3 Resources.</p><span class="resource-type type-book">📚 Resources-2 Link </span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HEALTH INFORMATICS -->
+  <div class="resource-category" style="background:var(--gray-100);">
+    <div class="container">
+      <div class="resource-cat-header">
+        <div class="resource-cat-icon" style="background:#d1fae5;">💻</div>
+        <div>
+          <h2 class="resource-cat-title">Health Informatics</h2>
+          <p class="resource-cat-sub">Digital health, EHR systems, clinical decision support, and health data science</p>
+        </div>
+      </div>
+      <div class="resources-grid">
+        <a href="#" class="resource-item"><h4> CDS Tools </h4><p> My CDS Tools here.</p><span class="resource-type type-link">🔗 DM CDS </span></a>
+        <a href="#" class="resource-item"><h4> EHR  – Project &amp; Product </h4><p> EHR Related works.</p><span class="resource-type type-book">📚 EHR Project</a>
+        <a href="#" class="resource-item"><h4> Portfolio Site </h4><p> My developed Portfolios .</p><span class="resource-type type-link">🔗 Documentation</span></a>
+        <a href="#" class="resource-item"><h4>Machine Learning for Healthcare</h4><p>MIT OpenCourseWare materials on clinical prediction models and healthcare AI.</p><span class="resource-type type-video">▶ Course</span></a>
+        <a href="#" class="resource-item"><h4>Digital Health Implementation Playbook</h4><p>WHO guidance for national digital health strategies and implementation frameworks.</p><span class="resource-type type-pdf">📄 PDF</span></a>
+        <a href="#" class="resource-item"><h4>Journal of the American Medical Informatics Association</h4><p>Leading peer-reviewed journal publishing health informatics research and methods.</p><span class="resource-type type-link">🔗 Journal</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HISTORY AND PHILOSOPHY -->
+  <div class="resource-category">
+    <div class="container">
+      <div class="resource-cat-header">
+        <div class="resource-cat-icon" style="background:#fef3c7;">📜</div>
+        <div>
+          <h2 class="resource-cat-title">History &amp; Philosophy</h2>
+          <p class="resource-cat-sub">Philosophy of medicine, history of science, ethics, and intellectual foundations</p>
+        </div>
+      </div>
+      <div class="resources-grid">
+        <a href="#" class="resource-item"><h4>The Structure of Scientific Revolutions – T.S. Kuhn</h4><p>Landmark text on how scientific paradigms shift, with profound implications for medicine.</p><span class="resource-type type-book">📚 Classic</span></a>
+        <a href="#" class="resource-item"><h4>The Birth of the Clinic – Michel Foucault</h4><p>Archaeological analysis of the emergence of clinical medicine and medical perception.</p><span class="resource-type type-book">📚 Classic</span></a>
+        <a href="#" class="resource-item"><h4>History of Medicine – Roy Porter</h4><p>Accessible comprehensive survey from antiquity through the twentieth century.</p><span class="resource-type type-book">📚 History</span></a>
+        <a href="#" class="resource-item"><h4>Principles of Biomedical Ethics – Beauchamp &amp; Childress</h4><p>Foundational bioethics text covering autonomy, beneficence, non-maleficence, and justice.</p><span class="resource-type type-book">📚 Ethics</span></a>
+        <a href="#" class="resource-item"><h4>The Logic of Scientific Discovery – Karl Popper</h4><p>Philosophical foundations of scientific methodology and the principle of falsifiability.</p><span class="resource-type type-book">📚 Philosophy</span></a>
+        <a href="#" class="resource-item"><h4>Journal of the History of Medicine</h4><p>Peer-reviewed journal on the historical development of medicine and health.</p><span class="resource-type type-link">🔗 Journal</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- LITERATURE -->
+  <div class="resource-category" style="background:var(--gray-100);">
+    <div class="container">
+      <div class="resource-cat-header">
+        <div class="resource-cat-icon" style="background:#ede9fe;">📖</div>
+        <div>
+          <h2 class="resource-cat-title">Literature</h2>
+          <p class="resource-cat-sub">Narrative medicine, health humanities, creative nonfiction, and recommended reading</p>
+        </div>
+      </div>
+      <div class="resources-grid">
+        <a href="#" class="resource-item"><h4>The Spirit Catches You and You Fall Down – A. Fadiman</h4><p>A profound exploration of cultural collision in medicine and the meaning of care.</p><span class="resource-type type-book">📚 Narrative</span></a>
+        <a href="#" class="resource-item"><h4>Being Mortal – Atul Gawande</h4><p>A surgeon's reflection on medicine's limits and the importance of dying well.</p><span class="resource-type type-book">📚 Narrative</span></a>
+        <a href="#" class="resource-item"><h4>When Breath Becomes Air – Paul Kalanithi</h4><p>A neurosurgeon's memoir on life, death, and what makes human existence meaningful.</p><span class="resource-type type-book">📚 Memoir</span></a>
+        <a href="#" class="resource-item"><h4>The Plague – Albert Camus</h4><p>Allegorical novel exploring epidemic, human solidarity, and medical response.</p><span class="resource-type type-book">📚 Fiction</span></a>
+        <a href="#" class="resource-item"><h4>Mountains Beyond Mountains – Tracy Kidder</h4><p>The story of Paul Farmer and Partners in Health bringing medicine to the poor.</p><span class="resource-type type-book">📚 Biography</span></a>
+        <a href="#" class="resource-item"><h4>Literature and Medicine Journal</h4><p>Academic journal exploring the intersections of literary studies and medical practice.</p><span class="resource-type type-link">🔗 Journal</span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MISCELLANEOUS -->
+  <div class="resource-category">
+    <div class="container">
+      <div class="resource-cat-header">
+        <div class="resource-cat-icon" style="background:#ccfbf1;">🌟</div>
+        <div>
+          <h2 class="resource-cat-title">Miscellaneous</h2>
+          <p class="resource-cat-sub">Productivity tools, research software, podcasts, and other curated resources</p>
+        </div>
+      </div>
+      <div class="resources-grid">
+        <a href="#" class="resource-item"><h4>Zotero Reference Manager</h4><p>Free, open-source reference management software for collecting, organising and citing research.</p><span class="resource-type type-link">🔗 Tool</span></a>
+        <a href="#" class="resource-item"><h4>R for Statistical Computing</h4><p>Free software environment for statistical computing and graphics used in epidemiology.</p><span class="resource-type type-link">🔗 Software</span></a>
+        <a href="#" class="resource-item"><h4>The Lancet Podcast</h4><p>Weekly discussions of new research, perspectives, and public health issues from the editors.</p><span class="resource-type type-video">▶ Podcast</span></a>
+        <a href="#" class="resource-item"><h4>Coursera Research Methods Specialisation</h4><p>Multi-course series covering qualitative, quantitative, and mixed-methods research design.</p><span class="resource-type type-video">▶ Course</span></a>
+        <a href="#" class="resource-item"><h4>GRADE Evidence Assessment Framework</h4><p>Guidelines for grading evidence in systematic reviews and health guideline development.</p><span class="resource-type type-pdf">📄 Framework</span></a>
+        <a href="#" class="resource-item"><h4>Mendeley Desktop</h4><p>Reference and PDF management tool with social networking features for researchers.</p><span class="resource-type type-link">🔗 Tool</span></a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-name">Dr. Anupom Das </div>
+        <p>Researcher · Educator · Public Health Expert</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://linkedin.com" target="_blank" class="social-icon linkedin" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://researchgate.net" target="_blank" class="social-icon researchgate" title="ResearchGate">
+          <svg viewBox="0 0 24 24" fill="white"><text y="18" font-size="14" font-weight="bold" font-family="serif">RG</text></svg>
+        </a>
+        <a href="https://scholar.google.com" target="_blank" class="social-icon scholar" title="Google Scholar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 3L1 9l11 6 9-4.91V17M1 9v7"/><path d="M5 13.18v4L12 21l7-3.82v-4"/></svg>
+        </a>
+      </div>
+      <div class="footer-right"><p>© 2026 Dr. Anupom Das </p></div>
+    </div>
+  </footer>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     CONTACT PAGE
+══════════════════════════════════════════════════════ -->
+<div id="page-contact" class="page">
+
+  <header>
+    <div class="header-inner">
+      <div class="logo" onclick="showPage('home')">
+        <span class="logo-name">Dr. Anupom Das </span>
+        <span class="logo-title"> Commited to bring change for positivity </span>
+      </div>
+      <nav>
+        <a href="#"                        onclick="showPage('home');      return false;">Home</a>
+        <a href="#"                        onclick="showPage('about');     return false;">About</a>
+        <a href="#"                        onclick="showPage('projects');  return false;">Projects</a>
+        <a href="#"                        onclick="showPage('resources'); return false;">Resources</a>
+        <a href="#" class="active"         onclick="showPage('contact');   return false;">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="contact-hero">
+    <div class="container">
+      <p class="section-label">Get In Touch</p>
+      <h1 class="section-title" style="font-size:3rem;">Contact Me</h1>
+      <p class="section-sub">Whether for research collaboration, academic enquiries, speaking engagements, or general correspondence — I'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <section class="section bg-white">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- CONTACT DETAILS -->
+        <div class="contact-details-card">
+          <p class="section-label">Contact Details</p>
+          <h2 class="section-title" style="color:white;font-size:1.8rem;">Reach Out</h2>
+          <div class="contact-list">
+            <div class="contact-item">
+              <div class="contact-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,13 2,6"/>
+                </svg>
+              </div>
+              <div class="contact-item-info">
+                <label>Email</label>
+                <span>anupom.das@stud.ki.se</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 8.81a19.79 19.79 0 01-3.07-8.63A2 2 0 012 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 18v2z"/>
+                </svg>
+              </div>
+              <div class="contact-item-info">
+                <label>Phone</label>
+                <span>+46 767417088 (SE), +8801745937644 (BD) </span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </div>
+              <div class="contact-item-info">
+                <label>Office</label>
+                <span>Department of Health Informatics, Widerstomoska Huset <br> Karolinska Institutet, Stockholm, Sweden</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon-wrap">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                  <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/>
+                  <line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+              </div>
+              <div class="contact-item-info">
+                <label>Office Hours</label>
+                <span>Monday – Friday, 9:00 AM – 4:00 PM</span>
+                <span> Prior contact is appreciated. </span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-socials-row">
+            <a href="https://www.linkedin.com/in/anupom-das/" target="_blank" class="contact-social">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://www.researchgate.net/profile/Anupom-Das?ev=hdr_xprf" target="_blank" class="contact-social">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><text y="17" font-size="13" font-weight="bold" font-family="serif">RG</text></svg>
+              ResearchGate
+            </a>
+            <a href="https://www.researchgate.net/profile/Anupom-Das?ev=hdr_xprf" target="_blank" class="contact-social">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 3L1 9l11 6 9-4.91V17M1 9v7"/><path d="M5 13.18v4L12 21l7-3.82v-4"/></svg>
+              Scholar
+            </a>
+          </div>
+        </div>
+
+        <!-- CONTACT FORM -->
+        <div class="contact-form-card">
+          <p class="section-label">Send a Message</p>
+          <h2 class="section-title" style="font-size:1.8rem;">Contact Form</h2>
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="John">
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Doe">
+            </div>
+          </div>
+          <div class="form-group" style="margin-top:1.25rem;">
+            <label>Email Address</label>
+            <input type="email" placeholder="john.doe@example.com">
+          </div>
+          <div class="form-group" style="margin-top:1.25rem;">
+            <label>Affiliation / Organisation</label>
+            <input type="text" placeholder="University / Organisation name">
+          </div>
+          <div class="form-group" style="margin-top:1.25rem;">
+            <label>Subject</label>
+            <select>
+              <option value="">Select a subject…</option>
+              <option>Research Collaboration</option>
+              <option>Academic Enquiry</option>
+              <option>Speaking Engagement</option>
+              <option>Student / Mentorship</option>
+              <option>Media / Press</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-top:1.25rem;">
+            <label>Message</label>
+            <textarea placeholder="Please describe your enquiry, collaboration proposal, or message in detail…"></textarea>
+          </div>
+          <button class="form-submit" onclick="handleFormSubmit(this)">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="22" y1="2" x2="11" y2="13"/>
+              <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+            </svg>
+            Send Message
+          </button>
+        </div>
+      </div>
+
+      <!-- Map placeholder -->
+      <div class="map-placeholder">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/>
+          <circle cx="12" cy="10" r="3"/>
+        </svg>
+        <span style="font-size:0.85rem;">Department of Public Health, University Name — Replace with an embedded map</span>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-left">
+        <div class="footer-name">Dr. Anupom Das </div>
+        <p>Researcher · Educator · Public Health Expert</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://linkedin.com" target="_blank" class="social-icon linkedin" title="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="https://researchgate.net" target="_blank" class="social-icon researchgate" title="ResearchGate">
+          <svg viewBox="0 0 24 24" fill="white"><text y="18" font-size="14" font-weight="bold" font-family="serif">RG</text></svg>
+        </a>
+        <a href="https://scholar.google.com" target="_blank" class="social-icon scholar" title="Google Scholar">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 3L1 9l11 6 9-4.91V17M1 9v7"/><path d="M5 13.18v4L12 21l7-3.82v-4"/></svg>
+        </a>
+      </div>
+      <div class="footer-right"><p>© 2026 Dr. Anupom Das </p></div>
+    </div>
+  </footer>
+</div>
+
+
+<!-- ── JavaScript ── -->
+<script src="script.js"></script>
+</body>
+</html>
